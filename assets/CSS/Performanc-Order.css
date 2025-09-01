@@ -1,0 +1,218 @@
+/* ==================================================
+   PERFORMANCE APPRAISAL PAGE - PREMIUM CARD STYLES
+   ================================================== */
+
+/* --- Page Layout --- */
+body {
+    background-color: #f8f9fe;
+    font-family: 'Almarai', sans-serif;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* --- Header: Search & Actions --- */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.search-bar {
+    position: relative;
+    flex-grow: 1;
+    max-width: 600px;
+}
+.search-bar i {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #999;
+}
+.search-bar input {
+    width: 100%;
+    height: 55px;
+    border-radius: 16px;
+    border: 1px solid #eef2f7;
+    background-color: #fff;
+    padding: 0 55px 0 20px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.search-bar input:focus {
+    outline: none;
+    border-color: #4A80FF;
+    box-shadow: 0 0 0 4px rgba(74, 128, 255, 0.1);
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.filter-buttons-group {
+    display: flex;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 5px;
+    border: 1px solid #eef2f7;
+}
+.filter-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #555;
+    transition: all 0.3s ease;
+}
+.filter-btn.active {
+    background-color: #2D3039;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.header-actions .action-btn {
+    background-color: #fff;
+    border: 1px solid #eef2f7;
+    color: #555;
+    height: 55px;
+    padding: 0 50px;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- Appraisals Grid --- */
+.appraisals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.appraisal-card {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+.appraisal-card.hidden {
+    display: none;
+}
+.appraisal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.employee-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #333;
+}
+.employee-info i {
+    font-size: 20px;
+}
+
+.status-tag {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+.tag-green { background-color: #E8F5E9; color: #388E3C; }
+.tag-red { background-color: #FFEBEE; color: #D32F2F; }
+.tag-yellow { background-color: #FFF8E1; color: #F9A825; }
+
+.card-body {
+    text-align: right;
+}
+.appraisal-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #2D3039;
+    margin-bottom: 15px;
+}
+
+.rating-stars {
+    display: flex;
+    gap: 5px;
+    font-size: 28px;
+}
+.rating-stars .star.filled {
+    color: #FFC107;
+}
+.rating-stars .star.empty {
+    color: #e0e0e0;
+}
+/* ==================================================
+   PERFORMANCE APPRAISAL PAGE - RESPONSIVE ENHANCEMENTS
+   ================================================== */
+
+/* Large screens < 1200px */
+@media (max-width: 1200px) {
+    .page-container { padding: 20px; }
+    .appraisals-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .appraisal-card { padding: 20px; }
+    .search-bar { max-width: 500px; }
+    .header-actions .action-btn { padding: 0 40px; height: 50px; font-size: 14px; }
+}
+
+/* Medium screens < 992px */
+@media (max-width: 992px) {
+    .page-header { flex-direction: column; align-items: stretch; gap: 15px; }
+    .search-bar { max-width: 100%; }
+    .header-actions { justify-content: flex-start; flex-wrap: wrap; gap: 10px; }
+    .filter-buttons-group { width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 10px; }
+    .filter-btn { padding: 8px 15px; font-size: 13px; }
+    .appraisals-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+    .appraisal-card { padding: 18px; }
+    .employee-info { font-size: 15px; }
+    .rating-stars { font-size: 24px; gap: 4px; }
+}
+
+/* Small screens < 768px */
+@media (max-width: 768px) {
+    .page-container { padding: 10px; margin: 15px auto; }
+    .search-bar input { height: 50px; font-size: 15px; padding: 0 50px 0 15px; }
+    .header-actions { flex-direction: column; align-items: stretch; gap: 10px; }
+    .action-btn { width: 100%; justify-content: center; padding: 0 20px; height: 50px; font-size: 14px; }
+    .filter-buttons-group { flex-direction: column; padding: 5px 0; }
+    .filter-btn { width: 100%; text-align: center; padding: 10px 0; }
+    .appraisals-grid { grid-template-columns: 1fr; gap: 15px; }
+    .appraisal-card { padding: 15px; border-radius: 16px; }
+    .employee-info { font-size: 14px; gap: 8px; }
+    .rating-stars { font-size: 22px; gap: 3px; }
+}
+
+/* Extra small screens < 576px */
+@media (max-width: 576px) {
+    .search-bar input { height: 45px; font-size: 14px; padding: 0 45px 0 12px; }
+    .appraisal-card { padding: 12px; }
+    .employee-info { font-size: 13px; gap: 6px; }
+    .appraisal-title { font-size: 16px; }
+    .rating-stars { font-size: 20px; gap: 2px; }
+    .action-btn { font-size: 13px; height: 45px; padding: 0 15px; }
+    .filter-btn { font-size: 12px; padding: 8px 10px; }
+}

@@ -1,0 +1,663 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    direction: rtl;
+}
+
+
+/* Header Section */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 20px;
+}
+
+.search-container {
+    flex: 1;
+    max-width: 400px;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 50px 12px 16px;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Cairo', sans-serif;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.search-input::placeholder {
+    color: #9ca3af;
+}
+
+.search-btn {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.search-btn:hover {
+    color: #4a90e2;
+    background-color: rgba(74, 144, 226, 0.1);
+}
+
+.add-new-container {
+    flex-shrink: 0;
+}
+
+.add-new-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Cairo', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-new-btn:hover {
+    background-color: #111827;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(31, 41, 55, 0.3);
+}
+
+.add-new-btn:active {
+    transform: translateY(0);
+}
+
+/* Table Container */
+.table-container {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.locations-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.locations-table thead {
+    background-color: #f8f9fa;
+}
+
+.locations-table th {
+    padding: 16px 20px;
+    text-align: right;
+    font-weight: 600;
+    font-size: 14px;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.locations-table tbody tr {
+    border-bottom: 1px solid #f3f4f6;
+    transition: background-color 0.2s ease;
+}
+
+.locations-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.locations-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.locations-table td {
+    padding: 16px 20px;
+    vertical-align: middle;
+}
+
+/* Company Info */
+.company-info {
+    display: flex;
+    align-items: center;
+}
+
+.company-name {
+    font-size: 14px;
+    color: #374151;
+    font-weight: 500;
+}
+
+/* Employee Count */
+.employee-count {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.employee-count .count {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.employee-count svg {
+    color: #6b7280;
+}
+
+/* Manager Info */
+.manager-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.manager-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.manager-name {
+    font-size: 14px;
+    color: #374151;
+    font-weight: 500;
+}
+
+/* Action Buttons */
+.dash-btn {
+    display: flex;
+    justify-content: center; /* يخليهم في النص */
+    gap: 20px; /* مسافة واضحة بين الأزرار */
+  }
+  
+  .dash-btn {
+    border: none;
+    padding: 8px 25px;
+    min-width: 110px; 
+    border-radius: 999px; 
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    text-align: center;
+  }
+  
+  /* زر الحذف */
+  .delete-btn {
+    background-color: #ffe6e6 !important;
+    color: #ff0000 !important;
+  }
+  .delete-btn:hover {
+    background-color: #ffcccc !important;
+  }
+  
+  /* زر بدل المنطقة */
+  .change-region-btn {
+    background-color: #fff8e6 !important;
+    color: #d4a017 !important;
+  }
+  .change-region-btn:hover {
+    background-color: #ffeebf !important;
+  }
+  
+  /* زر التعديل */
+  .edit-btn {
+    background-color: #e6f0ff;
+    color: #0066ff !important;
+  }
+  .edit-btn:hover {
+    background-color: #cce0ff !important;
+  }
+  
+/* Pagination */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pagination-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Cairo', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: transparent;
+    color: #6b7280;
+}
+
+.pagination-btn:hover {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.pagination-btn.active {
+    background-color: #4a90e2;
+    color: white;
+}
+
+.pagination-btn.active:hover {
+    background-color: #3b82f6;
+}
+
+.prev-btn,
+.next-btn {
+    padding: 0 8px;
+}
+
+.prev-btn:disabled,
+.next-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.prev-btn:disabled:hover,
+.next-btn:disabled:hover {
+    background-color: transparent;
+    color: #6b7280;
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.locations-table tbody tr {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive Design - Mobile First Approach */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+    }
+    
+    .header-section {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+    }
+    
+    .search-container {
+        max-width: none;
+    }
+    
+    .add-new-btn {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .table-container {
+        overflow-x: auto;
+        border-radius: 8px;
+    }
+    
+    .locations-table {
+        min-width: 700px;
+    }
+    
+    .locations-table th,
+    .locations-table td {
+        padding: 12px 16px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .action-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .pagination {
+        flex-wrap: wrap;
+        gap: 2px;
+    }
+    
+    .pagination-btn {
+        min-width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .locations-table th,
+    .locations-table td {
+        padding: 8px 12px;
+    }
+    
+    .company-name {
+        font-size: 13px;
+    }
+    
+    .manager-name {
+        font-size: 13px;
+    }
+    
+    .action-btn {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #111827;
+        color: #f9fafb;
+    }
+    
+    .table-container {
+        background-color: #1f2937;
+    }
+    
+    .locations-table thead {
+        background-color: #374151;
+    }
+    
+    .locations-table th {
+        color: #f9fafb;
+        border-bottom-color: #4b5563;
+    }
+    
+    .locations-table tbody tr {
+        border-bottom-color: #374151;
+    }
+    
+    .locations-table tbody tr:hover {
+        background-color: #374151;
+    }
+    
+    .search-input {
+        background-color: #374151;
+        border-color: #4b5563;
+        color: #f9fafb;
+    }
+    
+    .search-input::placeholder {
+        color: #9ca3af;
+    }
+    
+    .pagination {
+        background-color: #1f2937;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header-section,
+    .pagination-container {
+        display: none;
+    }
+    
+    .table-container {
+        box-shadow: none;
+        border: 1px solid #e5e7eb;
+    }
+    
+    .action-buttons {
+        display: none;
+    }
+}
+
+/* ================== Modal Styles (The New Part) ================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    transform: translateY(-50px) scale(0.95);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.modal-overlay.show .modal-content {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.modal-header h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #111827;
+    font-weight: 700;
+}
+
+.modal-body .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.modal-body .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Cairo', sans-serif;
+    background-color: #f9fafb;
+    transition: all 0.2s ease;
+}
+
+.modal-input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.address-input-container {
+    position: relative;
+}
+
+.address-input-container .modal-input {
+    padding-right: 40px;
+}
+
+.address-input-container .address-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7280;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.modal-btn {
+    padding: 12px 35px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.save-btn {
+    background-color: #000;
+    color: #fff;
+}
+.save-btn:hover { background-color: #333; }
+
+.cancel-btn {
+    background-color: #ff0000;
+    color: #fff;
+}
+.cancel-btn:hover { background-color: #cc0000; }
+
+/* Responsive modal */
+/* === Responsive Enhancements === */
+
+/* Large screens < 1200px */
+@media (max-width: 1200px) {
+    .header-section { gap: 16px; }
+    .search-container { max-width: 100%; }
+    .add-new-btn { padding: 10px 18px; font-size: 13px; }
+    .locations-table th, .locations-table td { padding: 14px 16px; font-size: 13px; }
+    .dash-btn { gap: 16px; }
+}
+
+/* Medium screens < 992px */
+@media (max-width: 992px) {
+    .header-section { flex-direction: column; align-items: stretch; gap: 14px; }
+    .locations-table { min-width: 650px; }
+    .dash-btn { flex-wrap: wrap; gap: 8px; }
+    .search-input { font-size: 13px; padding: 10px 45px 10px 12px; }
+    .add-new-btn { width: 100%; justify-content: center; }
+}
+
+/* Small screens < 768px */
+@media (max-width: 768px) {
+    .table-container { overflow-x: auto; border-radius: 8px; }
+    .locations-table { min-width: 600px; }
+    .locations-table th, .locations-table td { padding: 12px 14px; }
+    .dash-btn { flex-direction: column; gap: 6px; }
+    .pagination { flex-wrap: wrap; gap: 2px; }
+    .pagination-btn { min-width: 32px; height: 32px; font-size: 12px; }
+    .add-new-btn { padding: 10px; font-size: 13px; }
+}
+
+/* Extra small screens < 576px */
+@media (max-width: 576px) {
+    .locations-table { min-width: 500px; }
+    .locations-table th, .locations-table td { padding: 10px 12px; font-size: 12px; }
+    .manager-name, .company-name { font-size: 12px; }
+    .action-btn { width: 100%; font-size: 11px; padding: 5px 8px; }
+    .search-input { font-size: 12px; padding: 8px 40px 8px 10px; }
+}
+
+/* Tiny screens < 400px */
+@media (max-width: 400px) {
+    .locations-table { min-width: 400px; }
+    .dash-btn { gap: 4px; }
+    .modal-content { padding: 15px; }
+    .modal-body .form-grid { gap: 12px; }
+    .modal-btn { width: 100%; padding: 10px; font-size: 14px; }
+    .search-input { font-size: 11px; padding: 6px 35px 6px 8px; }
+}
+
+/* Table wrapper for horizontal scroll */
+.table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Optional scrollbar styling */
+.table-container::-webkit-scrollbar {
+    height: 6px;
+}
+.table-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
+
+/* Modal scaling for small screens */
+@media (max-width: 640px) {
+    .modal-content { width: 95%; }
+    .modal-footer { flex-direction: column-reverse; gap: 10px; }
+}
+

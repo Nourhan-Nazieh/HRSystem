@@ -1,0 +1,313 @@
+/* ==================================================
+   ADD EMPLOYEE WIZARD - PRO & COMPLETE STYLES
+   ================================================== */
+
+/* --- Page Layout --- */
+body {
+    background-color: #f8f9fe;
+    font-family: 'Almarai', sans-serif;
+}
+.page-container {
+    width: 100%;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+/* --- Form Wizard Card --- */
+.form-wizard-card {
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 40px 60px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+}
+
+/* --- Stepper --- */
+.stepper-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    position: relative;
+}
+.stepper-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 2%;
+    height: 2px;
+    width: 96%;
+    background-color: #f0f2f5;
+    z-index: 1;
+}
+.stepper-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    padding: 0 15px;
+    cursor: pointer;
+}
+.step-counter {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #d8dde6;
+    margin-bottom: 10px;
+    transition: all 0.4s ease;
+}
+.step-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #9098A7;
+    transition: all 0.4s ease;
+    white-space: nowrap;
+}
+.stepper-item.active .step-counter {
+    background-color: #2D3039;
+    border-color: #2D3039;
+    transform: scale(1.1);
+}
+.stepper-item.active .step-name {
+    color: #2D3039;
+}
+.stepper-item.completed .step-counter {
+    background-color: #4A80FF;
+    border-color: #4A80FF;
+}
+
+/* --- Form Steps --- */
+.form-step { display: none; }
+.form-step.active {
+    display: block;
+    animation: fadeIn 0.6s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.form-header {
+    text-align: right;
+    margin-bottom: 40px;
+    padding-right: 15px;
+    border-right: 3px solid #4A80FF;
+}
+.step-title { font-weight: 800; font-size: 24px; margin-bottom: 5px; }
+.step-subtitle { font-size: 16px; color: #8A909D; }
+
+/* --- Form Controls --- */
+.form-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 10px;
+    display: block;
+}
+.form-control-custom, .form-select-custom {
+    width: 100%;
+    height: 55px;
+    border-radius: 14px;
+    border: 1px solid #eef2f7;
+    background-color: #f9fafc;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.form-control-custom:focus, .form-select-custom:focus {
+    outline: none;
+    border-color: #4A80FF;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(74, 128, 255, 0.1);
+}
+.form-control-custom.is-invalid { border-color: #D32F2F; }
+
+/* --- File Drop Area --- */
+.file-drop-area {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 40px;
+    border: 2px dashed #d8dde6;
+    border-radius: 16px;
+    background-color: #f9fafc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.file-drop-area:hover, .file-drop-area.dragover {
+    border-color: #4A80FF;
+    background-color: #f0f4ff;
+}
+.file-drop-icon {
+    font-size: 48px;
+    color: #9098A7;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+.file-drop-area:hover .file-drop-icon {
+    color: #4A80FF;
+}
+.file-drop-message {
+    font-size: 16px;
+    font-weight: 700;
+    color: #8A909D;
+}
+.file-drop-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.file-drop-area .file-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #27AE60;
+    margin-top: 10px;
+}
+
+/* --- Navigation Buttons --- */
+.form-navigation {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f2f5;
+    gap: 15px;
+}
+.btn-nav-prev, .btn-nav-next {
+    border: none;
+    height: 55px;
+    border-radius: 16px;
+    padding: 0 50px;
+    font-weight: 800;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.btn-nav-prev {
+    background-color: #f1f3f6;
+    color: #555;
+}
+.btn-nav-prev:hover { background-color: #e9ecef; }
+.btn-nav-next {
+    background-color: #2D3039;
+    color: #fff;
+    box-shadow: 0 5px 20px rgba(45, 48, 57, 0.25);
+}
+.btn-nav-next:hover {
+    background-color: #000;
+    transform: translateY(-2px);
+}
+.hidden { display: none; }
+/* ==================================================
+   ADD EMPLOYEE WIZARD - RESPONSIVE STYLES
+   ================================================== */
+
+/* --- Tablets --- */
+@media (max-width: 992px) {
+    .page-container {
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    .form-wizard-card {
+        padding: 30px 25px;
+    }
+
+    .stepper-wrapper {
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 30px;
+        padding-bottom: 10px;
+    }
+
+    .step-name {
+        font-size: 14px;
+    }
+}
+
+/* --- Mobiles --- */
+@media (max-width: 576px) {
+    .page-container {
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .form-wizard-card {
+        padding: 20px 15px;
+        border-radius: 16px;
+    }
+
+    .form-header {
+        margin-bottom: 25px;
+        padding-right: 10px;
+    }
+
+    .step-title {
+        font-size: 20px;
+    }
+
+    .step-subtitle {
+        font-size: 14px;
+    }
+
+    .stepper-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .stepper-wrapper::before {
+        display: none; /* نشيل الخط الطويل */
+    }
+
+    .stepper-item {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .step-name {
+        font-size: 13px;
+    }
+
+    .form-control-custom,
+    .form-select-custom {
+        height: 48px;
+        font-size: 14px;
+        padding: 0 15px;
+    }
+
+    .file-drop-area {
+        padding: 20px;
+    }
+
+    .file-drop-icon {
+        font-size: 36px;
+    }
+
+    .file-drop-message {
+        font-size: 14px;
+    }
+
+    .form-navigation {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .btn-nav-prev,
+    .btn-nav-next {
+        width: 100%;
+        padding: 0 20px;
+        font-size: 15px;
+        height: 50px;
+    }
+}

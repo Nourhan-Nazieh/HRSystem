@@ -1,0 +1,322 @@
+/* ==================== FILTERS SECTION ==================== */
+.attendance-filters-section {
+  margin-bottom: 25px;
+}
+
+.filters-section {
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+  
+}
+
+/* Buttons row */
+.search-type-row {
+  text-align: right;
+  margin-bottom: 20px;
+
+}
+.search-buttons-group {
+  display: inline-flex;
+  gap: 12px;
+}
+.search-btn {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  color: #444;
+  font-weight: 600;
+  padding: 8px 25px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+.search-btn i {
+  margin-left: 6px;
+  color: #666;
+}
+.search-btn:hover {
+  background: #f1f1f1;
+}
+.search-btn.active {
+  background: #111;
+  color: #fff;
+  border: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+.search-btn.active i {
+  color: #fff;
+}
+
+/* Filter items */
+.filter-item {
+  background: #f9fafc;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #e3e6f0;
+  transition: all 0.3s ease;
+}
+.filter-item:hover {
+  border-color: #cdd5e0;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.filter-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.bg-blue   { background: #e0f2fe; color: #0284c7; }
+.bg-purple { background: #f3e8ff; color: #7c3aed; }
+.bg-red    { background: #fee2e2; color: #dc2626; }
+.bg-green  { background: #dcfce7; color: #15803d; }
+
+.filter-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.filter-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 4px;
+}
+.filter-input,
+.filter-select {
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  padding: 4px 0;
+  background: transparent;
+  width: 100%;
+}
+.filter-input:focus,
+.filter-select:focus {
+  outline: none;
+  border-bottom-color: #000;
+  box-shadow: none;
+}
+
+/* Time options (radio) */
+.time-options {
+  display: flex;
+  gap: 15px;
+  margin-top: 6px;
+}
+.time-options label {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* فلتر السلكت */
+.filter-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filter-select {
+  width: 100%;
+  padding-right: 2.5rem; /* مساحة للأيقونة */
+  padding-left: 1rem;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  appearance: none;
+  font-size: 14px;
+}
+
+/* الأيقونة */
+.filter-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;  /* لو RTL عايزها يمين */
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+
+/* ================= TABLE STYLE ================= */
+.table-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.styled-table thead th {
+  background: #f9fafb;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #374151;
+  text-align: center;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.styled-table tbody tr {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+.styled-table tbody tr:hover {
+  transform: scale(1.01);
+}
+.styled-table td {
+  padding: 14px;
+  text-align: center;
+  font-size: 14px;
+  border-top: none;
+}
+
+/* Status */
+.status {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+}
+.status.active {
+  background: #dcfce7;
+  color: #15803d;
+}
+.status.inactive {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Control Button */
+.control-btn {
+  border: none;
+  background: #f3f4f6;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.control-btn:hover {
+  background: #111;
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* فلتر السلكت */
+.filter-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+/* ==================== Responsive Tweaks ==================== */
+@media (max-width: 1024px) {
+  .search-buttons-group {
+      flex-wrap: wrap;
+      gap: 8px;
+  }
+  .filter-box {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+  }
+  .filter-select-wrapper {
+      width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .attendance-filters-section,
+  .filters-section {
+      padding: 15px;
+  }
+  .search-type-row {
+      text-align: center;
+  }
+  .search-buttons-group {
+      justify-content: center;
+  }
+  .filter-box {
+      flex-direction: column;
+      align-items: stretch;
+  }
+  .time-options {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .filter-select-wrapper {
+      width: 100%;
+  }
+  .styled-table {
+      font-size: 13px;
+  }
+  .styled-table thead th,
+  .styled-table td {
+      padding: 10px 8px;
+  }
+  .control-btn {
+      width: 28px;
+      height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-buttons-group {
+      flex-direction: column;
+      gap: 6px;
+  }
+  .filter-box {
+      flex-direction: column;
+      gap: 4px;
+  }
+  .filter-label {
+      font-size: 12px;
+  }
+  .filter-input,
+  .filter-select {
+      font-size: 13px;
+      padding: 3px 0;
+  }
+  .styled-table {
+      font-size: 12px;
+  }
+  .styled-table thead th,
+  .styled-table td {
+      padding: 8px 6px;
+  }
+  .control-btn {
+      width: 24px;
+      height: 24px;
+  }
+}

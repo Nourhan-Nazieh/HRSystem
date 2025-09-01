@@ -1,0 +1,258 @@
+
+.pro-report-section {
+    padding: 25px 0;
+}
+
+.pro-report-card {
+    background-color: #F7F8FA; /* لون الخلفية الرئيسي للبطاقة */
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eef2f7;
+}
+
+/* --- Filters Header --- */
+.pro-filters-header {
+    margin-bottom: 20px;
+}
+
+.pro-filter-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 14px;
+    height: 60px;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #eef2f7;
+}
+.pro-filter-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(44, 62, 80, 0.08);
+    border-color: #2c3e50;
+}
+
+.pro-filter-icon {
+    background-color: #F7F8FA;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8A909D;
+    font-size: 16px;
+    margin-left: 12px;
+}
+
+.pro-filter-text {
+    flex-grow: 1;
+}
+.pro-filter-text label {
+    display: block;
+    font-size: 12px;
+    color: #8A909D;
+    font-weight: 500;
+}
+.pro-filter-text span {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #2D3039;
+}
+
+.form-select-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.btn-pro-search, .btn-pro-sort {
+    height: 60px;
+    width: 100%;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+.btn-pro-search {
+    background-color: #2c3e50; /* استخدام اللون الرئيسي من style.css */
+    color: #fff;
+    border: none;
+}
+.btn-pro-search:hover {
+    background-color: #34495e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(44, 62, 80, 0.25);
+}
+.btn-pro-sort {
+    background-color: #fff;
+    color: #2c3e50;
+    border: 1px solid #eef2f7;
+}
+.btn-pro-sort:hover {
+    border-color: #2c3e50;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(44, 62, 80, 0.08);
+}
+
+/* --- Calendar View --- */
+.pro-calendar-view {
+    background-color: #fff;
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.pro-calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.pro-month-display {
+    background-color: #F7F8FA;
+    padding: 10px 25px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2D3039;
+}
+
+.pro-action-btn {
+    background: none;
+    border: none;
+    color: #8A909D;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 20px;
+}
+.pro-action-btn i { margin-left: 8px; }
+
+.pro-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+}
+
+.pro-day-cell {
+    background-color: #F7F8FA;
+    border-radius: 14px;
+    padding: 15px;
+    text-align: center;
+    min-height: 95px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+.pro-day-cell:hover {
+    border-color: #d0d5dd;
+}
+
+.pro-day-cell .day-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.status-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Colors from screenshot */
+.status-dot.green, .status-dot.green-num { background-color: #27AE60; }
+.status-dot.red { background-color: #E74C3C; }
+.status-dot.yellow { background-color: #F1C40F; }
+.status-dot.dark-red { background-color: #962626; }
+.status-dot.black { background-color: #2D3039; }
+.status-dot.blue { background-color: #2F80ED; }
+
+/* --- Legend --- */
+.pro-calendar-legend {
+    padding: 25px 15px 10px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 30px;
+    font-size: 13px;
+    color: #555;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.legend-dot.green, .legend-dot.green-num { background-color: #27AE60; }
+.legend-dot.red { background-color: #E74C3C; }
+.legend-dot.yellow { background-color: #F1C40F; }
+.legend-dot.dark-red { background-color: #962626; }
+.legend-dot.black { background-color: #2D3039; }
+.legend-dot.blue { background-color: #2F80ED; }
+/* ===========================
+   RESPONSIVE DESIGN FOR PRO REPORT
+=========================== */
+@media (max-width: 1200px) {
+    .pro-calendar-grid { grid-template-columns: repeat(7, 1fr); gap: 10px; }
+    .pro-day-cell { min-height: 85px; padding: 12px; }
+    .pro-filter-item { height: 55px; padding: 0 12px; }
+    .btn-pro-search, .btn-pro-sort { height: 55px; font-size: 14px; }
+}
+
+@media (max-width: 992px) {
+    .pro-calendar-grid { grid-template-columns: repeat(7, 1fr); gap: 8px; }
+    .pro-day-cell { min-height: 75px; padding: 10px; }
+    .pro-filter-item { flex-direction: column; align-items: flex-start; height: auto; padding: 10px; }
+    .pro-filter-text label { font-size: 11px; }
+    .pro-filter-text span { font-size: 13px; }
+    .btn-pro-search, .btn-pro-sort { height: 50px; font-size: 13px; }
+}
+
+@media (max-width: 768px) {
+    .pro-calendar-grid { grid-template-columns: repeat(7, 1fr); gap: 6px; }
+    .pro-day-cell { min-height: 65px; padding: 8px; font-size: 12px; }
+    .pro-report-section { padding: 20px 10px; }
+    .pro-filter-item { width: 100%; }
+    .btn-pro-search, .btn-pro-sort { width: 100%; font-size: 12px; }
+    .pro-calendar-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .pro-action-btn { margin-right: 0; margin-top: 5px; }
+}
+
+@media (max-width: 576px) {
+    .pro-calendar-grid { grid-template-columns: repeat(4, 1fr); gap: 5px; }
+    .pro-day-cell { min-height: 55px; padding: 6px; }
+    .pro-filter-item { padding: 8px; }
+    .pro-filter-text label { font-size: 10px; }
+    .pro-filter-text span { font-size: 12px; }
+    .btn-pro-search, .btn-pro-sort { height: 45px; font-size: 11px; }
+    .pro-month-display { font-size: 13px; padding: 8px 15px; }
+    .status-dot { width: 22px; height: 22px; font-size: 10px; }
+    .legend-item { gap: 6px; font-size: 12px; }
+    .legend-dot { width: 12px; height: 12px; }
+}

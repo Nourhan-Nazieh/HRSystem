@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> الإعدادات</title>
+    <!-- ___ــــــــLogoـــــــ -->
+    <link rel="icon" href="../assets/images/HRlogo.jpg"/>
+    <!-- Bootstrap CSS -->
+    <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="../assets/CSS/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts - Almarai -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <!-- Custom-Css-->
+    <link rel="stylesheet" href="../assets/CSS/style.css">
+    <link rel="stylesheet" href="../assets/CSS/settings.css">
+
+
+</head>
+<body>
+  <!-- ================= START  Navbar ================= -->
+  <header class="premium-header">
+    <nav class="premium-navbar">
+        <div class="navbar-container">
+            
+            <!-- Profile Section -->
+            <div class="profile-section">
+                <div class="profile-wrapper">
+                    <div class="profile-avatar">
+                        <img src="./assets/images/profile.jpg" alt="User Avatar" class="profile-img">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="profile-info">
+                        <h6 class="profile-name">أحمد هارون</h6>
+                        <span class="profile-role">مدير عام</span>
+                    </div>
+                    <div class="profile-dropdown">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="profile-menu">
+                    <div class="menu-item"><i class="fas fa-user"></i><span>الملف الشخصي</span></div>
+                    <div class="menu-item"><i class="fas fa-cog"></i><span>الإعدادات</span></div>
+                    <div class="menu-divider"></div>
+                    <div class="menu-item logout"><i class="fas fa-sign-out-alt"></i><span>تسجيل الخروج</span></div>
+                </div>                
+                    <!-- Phone Button -->
+                    <button class="action-btn phone-btn" title="الاتصال السريع">
+                      <i class="fas fa-phone"></i>
+                  </button>
+                  
+                  <!-- Notifications Button -->
+                  <button class="action-btn notification-btn" title="الإشعارات">
+                      <i class="fas fa-bell"></i>
+                      <span class="notification-badge">3</span>
+                  </button>
+                  
+                  <!-- Messages Button -->
+                  <button class="action-btn message-btn" title="الرسائل">
+                      <i class="fas fa-envelope"></i>
+                      <span class="message-badge">5</span>
+                  </button>
+            </div>
+            
+         
+            <!-- Search Section -->
+            <!-- Center - Enhanced Search -->
+            <div class="search-section">
+              <div class="search-container">
+                  <div class="search-input-wrapper">
+                      <i class="fas fa-search search-icon"></i>
+                      <input type="text" class="search-input" placeholder="ابحث في النظام..." autocomplete="off">
+                      <div class="search-suggestions">
+                          <div class="suggestion-item">
+                              <i class="fas fa-user"></i>
+                              <span>البحث عن موظف</span>
+                          </div>
+                          <div class="suggestion-item">
+                              <i class="fas fa-file-alt"></i>
+                              <span>البحث في التقارير</span>
+                          </div>
+                          <div class="suggestion-item">
+                              <i class="fas fa-calendar"></i>
+                              <span>البحث في الإجازات</span>
+                          </div>
+                      </div>
+                  </div>
+                  <button class="search-filter-btn" title="فلاتر البحث">
+                      <i class="fas fa-sliders-h"></i>
+                  </button>
+              </div>
+          </div>
+  
+            <!-- Actions & Breadcrumb Section -->
+            <div class="actions-section">
+                <div class="action-buttons">
+                            <!-- الرئيسية + الحضور والانصراف -->
+                  <div class="breadcrumb-section">
+                    <nav aria-label="breadcrumb">
+                        <ol class="premium-breadcrumb">
+                            <li class="breadcrumb-item active"><a href="../index.html" class="breadcrumb-link"><i class="fas fa-home"></i><span>الرئيسية</span></a></li>
+                            <li class="breadcrumb-item "><a href="./pages/Attendance.html" class="breadcrumb-link"><i class="fas fa-users"></i><span> الحضور والأنصراف</span></a></li>
+                        </ol>
+                    </nav>
+                </div>
+  
+                  <!-- Reports Dropdown -->
+                  <div class="reports-dropdown">
+                      <button class="action-btn reports-btn report" title="التقارير">التقارير 
+                          <i class="fas fa-chart-bar"></i>
+                          <i class="fas fa-chevron-down arrow-icon"></i>
+                      </button>
+                      <div class="reports-menu">
+                          <div class="report-item"><a href="../pages/report-daily.html"><i class="fas fa-calendar-day"></i><span>تقرير يومي</span></a></div>
+                          <div class="report-item"><a href="../pages/report-monthly.html"><i class="fas fa-calendar-alt"></i><span>تقرير شهري</span></a></div>
+                          <div class="report-item"><a href="../pages/report-daily.html"><i class="fas fa-chart-line"></i><span>تقرير سنوي</span></a></div>
+                      </div>
+                  </div>
+                    <!-- Quick Actions Dropdown -->
+                    <div class="quick-actions-dropdown">
+                      <button class="action-btn quick-btn" title="إجراءات سريعة">
+                          <i class="fas fa-plus"></i>
+                      </button>
+                      <div class="quick-menu">
+                          <div class="quick-item"><a href="../pages/AddEmployee.html"><i class="fas fa-user-plus"></i><span>إضافة موظف</span></a></div>
+                          <div class="quick-item"><a href="../pages/AddPerformanc.html"><i class="fas fa-calendar-plus"></i><span>طلب إجازة</span></a></div>
+                          <div class="quick-item"><a href="../pages/Report-Acc.html"><i class="fas fa-file-plus"></i><span>تقرير جديد</span></a></div>
+                      </div>
+                  </div>
+  
+                </div>
+  
+            </div>
+  
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="فتح القائمة">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+  </header>
+      <!-- ================= START  statistics ================= -->
+        <section class="statistics-section mt-5 pt-5">
+            <div class="container-fluid px-4 py-4">
+                <div class="row g-3">
+      
+                    <!-- Card 1: الإجمالي -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div class="stat-card">
+                            <div class="stat-content">
+                                <div class="stat-icon cyan-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 class="stat-number">100</h3>
+                                    <p class="stat-label">الإجمالي</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                      <!-- Card 2: منتظمين -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div class="stat-card">
+                            <div class="stat-content">
+                                <div class="stat-icon purple-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 class="stat-number">66</h3>
+                                    <p class="stat-label">منتظمين</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3: متأخرين -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div class="stat-card">
+                            <div class="stat-content">
+                                <div class="stat-icon blue-icon">
+                                    <i class="fas fa-user-clock"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 class="stat-number">9</h3>
+                                    <p class="stat-label">متأخرين</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4: م.التأخير -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div class="stat-card">
+                            <div class="stat-content">
+                                <div class="stat-icon green-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 class="stat-number">90.4</h3>
+                                    <p class="stat-label">م.التأخير</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5: لم يحضروا -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div class="stat-card">
+                            <div class="stat-content">
+                                <div class="stat-icon red-icon">
+                                    <i class="fas fa-user-times"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 class="stat-number">16</h3>
+                                    <p class="stat-label">لم يحضروا</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6: في إجازة -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div class="stat-card">
+                            <div class="stat-content">
+                                <div class="stat-icon yellow-icon">
+                                    <i class="fas fa-calendar-times"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 class="stat-number">5</h3>
+                                    <p class="stat-label">في إجازة</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+       
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== START NAVIGATION TABS SECTION ========== -->
+<section class="navigation-section">
+  <div class="nav-tabs-container">
+  
+  <!-- Left Arrow Button -->
+  <button class="nav-arrow" id="navLeft" type="button" aria-label="السابق">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  
+  
+  <!-- Tabs Wrapper - All tabs in one container -->
+  <div class="nav-tabs-wrapper" id="tabsWrapper">
+    
+    <!-- Group 1: 4 tabs -->
+    <div class="nav-tab-item active" data-tab="home" data-group="1">
+      <a href="../index.html">
+        <div class="nav-tab-content">
+          <div class="tab-icon"><i class="fas fa-tachometer-alt"></i></div>
+          <span class="tab-text">الرئيسية</span>
+        </div>
+      </a>
+    </div>
+    <div class="nav-tab-item" data-tab="attendance" data-group="1">
+      <a href="../pages/Attendance.html" >
+        <div class="nav-tab-content">
+          <div class="tab-icon"><i class="fas fa-user-check"></i></div>
+          <span class="tab-text">الحضور والانصراف</span>
+        </div>
+      </a>
+    </div>
+    <div class="nav-tab-item" data-tab="alerts" data-group="1">
+      <a href="../pages/AlertAdd.html">
+        <div class="nav-tab-content">
+          <div class="tab-icon"><i class="fas fa-bell"></i></div>
+          <span class="tab-text">التنبيهات والإنذارات</span>
+        </div>
+      </a>
+    </div>
+    
+    <div class="nav-tab-item" data-tab="leave-reports" data-group="1">
+      <a href="../pages/LeaveReports.html">
+        <div class="nav-tab-content">
+          <div class="tab-icon"><i class="fas fa-calendar-alt"></i></div>
+          <span class="tab-text">تقارير الإجازات</span>
+        </div>
+      </a>
+    </div>
+  
+    <!-- Group 2: 4 tabs -->
+    <div class="nav-tab-item" data-tab="requests" data-group="2">
+      <a href="../pages/Requests.html">
+        <div class="nav-tab-content">
+          <div class="tab-icon"><i class="fas fa-inbox"></i></div>
+          <span class="tab-text">الطلبات</span>
+        </div>
+      </a>
+    </div>
+    
+    <div class="nav-tab-item" data-tab="recent-requests" data-group="2">
+      <a href="../pages/Requests.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-history"></i></div>
+        <span class="tab-text">الطلبات الحديثة</span>
+      </div>
+    </a>
+    </div>
+  
+    <div class="nav-tab-item" data-tab="all-requests" data-group="2">
+      <a href="../pages/Requests.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-archive"></i></div>
+        <span class="tab-text">جميع الطلبات</span>
+      </div>
+    </a>
+    </div>
+  
+    <div class="nav-tab-item" data-tab="approvals" data-group="2">
+      <a href=".,/pages/sequenceRequests.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-sitemap"></i></div>
+        <span class="tab-text">تسلسل الموافقات</span>
+      </div>
+    </a>
+    </div>
+  
+    <!-- Group 3: 2 tabs -->
+    <div class="nav-tab-item" data-tab="performance" data-group="3">
+      <a href="../pages/AddPerformanc.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-chart-line"></i></div>
+        <span class="tab-text">تقييم الأداء</span>
+      </div>
+    </a>
+    </div>
+  
+    <div class="nav-tab-item" data-tab="evaluation-requests" data-group="3">
+      <a href="../pages/Performanc-Order.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-tasks"></i></div>
+        <span class="tab-text">طلبات التقييم</span>
+      </div>
+    </a>
+    </div>
+  
+    <!-- Group 4: 5 tabs -->
+    <div class="nav-tab-item" data-tab="employees" data-group="4">
+      <a href="../pages/employee.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-users"></i></div>
+        <span class="tab-text">الموظفين</span>
+      </div>
+    </a>
+    </div>
+  
+    <div class="nav-tab-item" data-tab="employee-list" data-group="4">
+      <a href="../pages/employee.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-list-ul"></i></div>
+        <span class="tab-text">قائمة الموظفين</span>
+      </div>
+    </a>
+    </div>
+
+    <div class="nav-tab-item" data-tab="new-employee" data-group="4">
+      <a href="../pages/AddEmployee.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-user-plus"></i></div>
+        <span class="tab-text">موظف جديد</span>
+      </div>
+    </a>
+    </div>
+    <div class="nav-tab-item" data-tab="import-excel" data-group="4">
+      <a href="../pages/ImportExcel.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-file-excel"></i></div>
+        <span class="tab-text">استيراد Excel</span>
+      </div>
+    </a>
+    </div>
+    <div class="nav-tab-item" data-tab="work-times" data-group="4">
+      <a href="../pages/WorkTimes.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-clock"></i></div>
+        <span class="tab-text">أوقات العمل</span>
+      </div>
+    </a>
+    </div>
+  
+    <!-- Group 5: 5 tabs -->
+    <div class="nav-tab-item" data-tab="control" data-group="5">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-sliders-h"></i></div>
+        <span class="tab-text">التحكم</span>
+      </div>
+    </div>
+
+    <div class="nav-tab-item" data-tab="locations" data-group="5">
+      <a href="../pages/locations.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <span class="tab-text">المواقع والفروع</span>
+      </div>
+    </a>
+    </div>
+    <div class="nav-tab-item" data-tab="departments" data-group="5">
+      <a href="../pages/depar-Employe.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-building"></i></div>
+        <span class="tab-text">أقسام الموظفين</span>
+      </div>
+    </a>
+    </div>
+    <div class="nav-tab-item" data-tab="admin-accounts" data-group="5">
+      <a href="../pages/admin_accounts.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-user-shield"></i></div>
+        <span class="tab-text">الحسابات الإدارية</span>
+      </div>
+    </a>
+    </div>
+    <div class="nav-tab-item" data-tab="permissions" data-group="5">
+      <a href="../pages/perrmisonMang.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-key"></i></div>
+        <span class="tab-text">صلاحيات الإداريين</span>
+      </div>
+    </a>
+    </div>
+  
+    <!-- Group 6: 5 tabs -->
+    <div class="nav-tab-item" data-tab="finance" data-group="6">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-wallet"></i></div>
+        <span class="tab-text">المالية</span>
+      </div>
+    </div>
+    <div class="nav-tab-item" data-tab="payroll" data-group="6">
+      <a href="../pages/Payroll.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-money-bill-wave"></i></div>
+        <span class="tab-text">مسير الرواتب</span>
+      </div>
+      </a>
+    </div>
+    <div class="nav-tab-item" data-tab="invoices" data-group="6">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <span class="tab-text">الفواتير الضريبية</span>
+      </div>
+    </div>
+    <div class="nav-tab-item" data-tab="end-of-service" data-group="6">
+      <a href="../pages/end-of-service.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-handshake"></i></div>
+        <span class="tab-text">مكافأة نهاية الخدمة</span>
+      </div>
+    </a>
+    </div>
+    <div class="nav-tab-item" data-tab="financial-report" data-group="6">
+      <a href="../pages/Report-Acc.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-chart-pie"></i></div>
+        <span class="tab-text">التقرير المالي</span>
+      </div>
+    </a>
+    </div>
+  
+    <!-- Group 7: 3 tabs -->
+    <div class="nav-tab-item" data-tab="general-settings" data-group="7">
+      <a href="../pages/settings.html">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-cogs"></i></div>
+        <span class="tab-text">إعدادات عامة</span>
+      </div>
+    </a>
+    </div>
+    <div class="nav-tab-item" data-tab="subscriptions" data-group="7">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-id-card"></i></div>
+        <span class="tab-text">الاشتراكات</span>
+      </div>
+    </div>
+    <div class="nav-tab-item" data-tab="devices" data-group="7">
+      <div class="nav-tab-content">
+        <div class="tab-icon"><i class="fas fa-fingerprint"></i></div>
+        <span class="tab-text">الأجهزة</span>
+      </div>
+    </div>
+  
+  </div>
+  
+    <!-- Right Arrow Button -->
+    <button class="nav-arrow" id="navRight" type="button" aria-label="التالي">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+  </section>
+  <!-- ========== END NAVIGATION TABS SECTION ========== -->
+ 
+  <!-- ========== START SETTINGS CONTAINER ========== -->
+  <div class="settings-container">
+    <!-- Tabs Navigation -->
+    <nav class="settings-tabs">
+        <a href="#" class="tab-link active" data-tab="general-settings">اعدادات عامة</a>
+        <a href="#" class="tab-link" data-tab="company-info">بيانات المنشاة</a>
+        <a href="#" class="tab-link" data-tab="attendance">الحضور والانصراف</a>
+        <a href="#" class="tab-link" data-tab="salary">اعدادات الرواتب</a>
+        <a href="#" class="tab-link" data-tab="mobile">تطبيق الجوال</a>
+        <a href="#" class="tab-link" data-tab="documents">المستندات</a>
+        <a href="#" class="tab-link" data-tab="vacations">اعدادات الاجازات</a>
+        <a href="#" class="tab-link" data-tab="covenants">عهد</a>
+    </nav>
+
+    <!-- Settings Content Wrapper -->
+    <div class="settings-content">
+
+        <!-- ================= START GENERAL SETTINGS TAB ================= -->
+        <main id="general-settings" class="tab-content active">
+            <div class="form-grid">
+                <!-- اسم المنشأة -->
+                <div class="form-group full-width">
+                    <label for="company-name">اسم المنشأة</label>
+                    <input type="text" id="company-name">
+                </div>
+                <!-- رابط مخصص -->
+                <div class="form-group full-width">
+                    <label for="custom-link">رابط مخصص</label>
+                    <div class="custom-link-wrapper">
+                        <span class="link-prefix">https://tahalof.basmtak.com</span>
+                        <input type="text" id="custom-link" value="tahalof">
+                    </div>
+                </div>
+                <!-- إضافة شعار -->
+                <div class="form-group">
+                    <label>اضافة شعار</label>
+                    <div class="logo-uploader" id="logo-uploader">
+                        <input type="file" id="logo-input" accept="image/*" hidden>
+                        <div class="upload-area">
+                            <img src="" alt="شعار المنشأة" class="logo-preview">
+                            <div class="upload-placeholder"><i class="fas fa-image"></i></div>
+                        </div>
+                        <button type="button" class="upload-btn"><i class="fas fa-arrow-up"></i> اضغط لرفع الشعار</button>
+                    </div>
+                </div>
+                <!-- اللغة واللون -->
+                <div class="form-group">
+                    <div class="inline-group"><label>اللغة</label><div class="language-switcher"><button type="button" class="lang-btn active" data-lang="ar">العربية</button><button type="button" class="lang-btn" data-lang="en">English</button></div></div>
+                    <div class="inline-group"><label>اللون الاساسي</label><div class="color-picker"><div class="color-option" style="background-color: #000000;" data-color="#000000"></div><div class="color-option" style="background-color: #f44336;" data-color="#f44336"></div><div class="color-option" style="background-color: #ffeb3b;" data-color="#ffeb3b"></div><div class="color-option" style="background-color: #cddc39;" data-color="#cddc39"></div><div class="color-option" style="background-color: #4caf50;" data-color="#4caf50"></div><div class="color-option" style="background-color: #00bcd4;" data-color="#00bcd4"></div><div class="color-option" style="background-color: #2196f3;" data-color="#2196f3"></div><div class="color-option" style="background-color: #3f51b5;" data-color="#3f51b5"></div><div class="color-option" style="background-color: #9c27b0;" data-color="#9c27b0"></div><div class="color-option" style="background-color: #e91e63;" data-color="#e91e63"></div><div class="color-option" style="background-color: #ff5722;" data-color="#ff5722"></div></div></div>
+                </div>
+                <!-- سياسة الخصوصية -->
+                <div class="form-group"><label for="privacy-policy">سياسة الخصوصية</label><textarea id="privacy-policy" rows="8"></textarea></div>
+                <!-- الشروط والاحكام -->
+                <div class="form-group"><label for="terms-conditions">الشروط والاحكام</label><textarea id="terms-conditions" rows="8"></textarea></div>
+            </div>
+            <div class="form-footer"><button type="submit" class="btn-save">حفظ</button></div>
+        </main>
+        <!-- ================= START COMPANY INFO TAB ================= -->
+        <section id="company-info" class="tab-content">
+            <div class="form-grid">
+                <!-- العنوان -->
+                <div class="form-group">
+                    <label for="address">العنوان</label>
+                    <input type="text" id="address">
+                </div>
+                <!-- رقم السجل التجاري -->
+                <div class="form-group">
+                    <label for="cr-number">رقم السجل التجاري</label>
+                    <input type="text" id="cr-number">
+                </div>
+                <!-- الدولة -->
+                <div class="form-group">
+                    <label for="country">الدولة</label>
+                    <div class="custom-select-wrapper">
+                        <select id="country">
+                            <option value="sa" selected>المملكة العربية السعودية</option>
+                            <option value="ae">الإمارات العربية المتحدة</option>
+                            <option value="kw">الكويت</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- المدينة -->
+                <div class="form-group">
+                    <label for="city">المدينة</label>
+                    <div class="custom-select-wrapper">
+                        <select id="city">
+                            <option value="riyadh" selected>الرياض</option>
+                            <option value="jeddah">جدة</option>
+                            <option value="dammam">الدمام</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- الرمز البريدي -->
+                <div class="form-group">
+                    <label for="zip-code">الرمز البريدي</label>
+                    <input type="text" id="zip-code">
+                </div>
+                <!-- البريد الالكتروني للمنشأة -->
+                <div class="form-group">
+                    <label for="company-email">البريد الالكتروني للمنشأة</label>
+                    <input type="text" id="company-email">
+                </div>
+            </div>
+            <div class="form-footer">
+                <button type="submit" class="btn-save">حفظ</button>
+            </div>
+        </section>
+
+            <!-- ================= START ATTENDANCE TAB (3) ================= -->
+            <section id="attendance" class="tab-content">
+              <div class="form-grid">
+                  
+                  <!-- 1. الدولة -->
+                  <div class="form-group">
+                      <label for="attendance-country">الدولة</label>
+                      <div class="custom-select-wrapper">
+                          <select id="attendance-country">
+                              <option value="sa" selected>المملكة العربية السعودية</option>
+                              <option value="ae">الإمارات العربية المتحدة</option>
+                              <option value="kw">الكويت</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <!-- 2. التحقق من بصمة اليد / الوجه -->
+                  <div class="form-group toggle-group">
+                      <label for="biometric-verification">التحقق من بصمة اليد / الوجه</label>
+                      <div class="toggle-switch">
+                          <input type="checkbox" id="biometric-verification" class="toggle-input">
+                          <label for="biometric-verification" class="toggle-label"></label>
+                      </div>
+                  </div>
+
+                  <!-- 3. اتاحة تسجيل الحضور قبل بداية فترة العمل -->
+                  <div class="form-group">
+                      <label for="checkin-minutes">اتاحة تسجيل الحضور قبل دقيقة من وقت بداية فترة العمل</label>
+                      <div class="number-input-wrapper">
+                          <input type="number" id="checkin-minutes" value="120">
+                      </div>
+                  </div>
+
+                  <!-- 4. ارسال تنبيهات تذكيرية بمواعيد الدوام -->
+                  <div class="form-group toggle-group">
+                      <label for="schedule-reminders">ارسال تنبيهات تذكيرية بمواعيد الدوام</label>
+                      <div class="toggle-switch">
+                          <input type="checkbox" id="schedule-reminders" class="toggle-input">
+                          <label for="schedule-reminders" class="toggle-label"></label>
+                      </div>
+                  </div>
+
+                  <!-- 5. السماح بتسجيل الحضور/الانصراف من اي مكان -->
+                  <div class="form-group toggle-group">
+                      <label for="remote-checkin">السماح بتسجيل الحضور/الانصراف من اي مكان (خارج الموقع)</label>
+                      <div class="toggle-switch">
+                          <input type="checkbox" id="remote-checkin" class="toggle-input">
+                          <label for="remote-checkin" class="toggle-label"></label>
+                      </div>
+                  </div>
+
+                    <!-- 6. السماح بتسجيل الحضور/الانصراف من اي مكان -->
+                  <div class="form-group toggle-group">
+                      <label for="remote-checkin">اتاحة تسجيل الحضور / الانصراف من جميع الفروع والمواقع المحفوظة</label>
+                      <div class="toggle-switch">
+                          <input type="checkbox" id="remote-checkin" class="toggle-input">
+                          <label for="remote-checkin" class="toggle-label"></label>
+                      </div>
+                  </div>
+
+                  <!-- 7. السماح للموظفين بإضافة فترات عمل مؤقتة/طارئة -->
+                  <div class="form-group toggle-group">
+                      <label for="allow-temp-shifts">السماح للموظفين بإضافة فترات عمل مؤقتة/طارئة check جديدة</label>
+                      <div class="toggle-switch">
+                          <input type="checkbox" id="allow-temp-shifts" class="toggle-input">
+                          <label for="allow-temp-shifts" class="toggle-label"></label>
+                      </div>
+                  </div>
+
+
+              </div>
+              <div class="form-footer">
+                  <button type="submit" class="btn-save">حفظ</button>
+              </div>
+          </section>
+            <!-- ================= END ATTENDANCE TAB (3) ================= -->
+
+            <!-- ================= START SALARY SETTINGS TAB (4) ================= -->
+            <section id="salary" class="tab-content">
+              <div class="form-grid">
+
+                  <!-- 1. حساب خصم التأخير/الانصراف المبكر -->
+                  <div class="form-group">
+                      <label for="late-deduction-basis">حساب خصم التأخير/الانصراف المبكر بناء على</label>
+                      <div class="custom-select-wrapper">
+                          <select id="late-deduction-basis">
+                              <option value="basic">الراتب الاساسي</option>
+                              <option value="total">الراتب الإجمالي</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <!-- 2. حساب خصم الغياب -->
+                  <div class="form-group">
+                      <label for="absence-deduction-basis">حساب خصم الغياب بناء على</label>
+                      <div class="custom-select-wrapper">
+                          <select id="absence-deduction-basis">
+                              <option value="custom" selected>اعدادات مخصصة</option>
+                              <option value="basic">الراتب الاساسي</option>
+                          </select>
+                      </div>
+                      <div class="radio-options-group">
+                          <div class="radio-item"><input type="radio" id="rad-basic" name="absence-deduction"><label for="rad-basic">الراتب الاساسي</label></div>
+                          <div class="radio-item"><input type="radio" id="rad-housing" name="absence-deduction"><label for="rad-housing">بدل سكن</label></div>
+                          <div class="radio-item"><input type="radio" id="rad-transport" name="absence-deduction"><label for="rad-transport">بدل مواصلات</label></div>
+                          <div class="radio-item"><input type="radio" id="rad-living" name="absence-deduction"><label for="rad-living">بدل معيشه</label></div>
+                          <div class="radio-item"><input type="radio" id="rad-other" name="absence-deduction"><label for="rad-other">بدلات اخرى</label></div>
+                          <div class="radio-item"><input type="radio" id="rad-housing-transport" name="absence-deduction"><label for="rad-housing-transport">بدل سكن ومواصلات</label></div>
+                          <div class="radio-item"><input type="radio" id="rad-car" name="absence-deduction"><label for="rad-car">بدل سيارة</label></div>
+                      </div>
+                  </div>
+
+                  <!-- 3. خصم بصمة الخروج المنسية -->
+                  <div class="form-group">
+                      <label for="forgot-checkout-deduction">خصم بصمة الخروج المنسية</label>
+                      <div class="custom-select-wrapper">
+                          <select id="forgot-checkout-deduction">
+                              <option value="15-percent" selected>خصم 15 % من اجر العمل</option>
+                              <option value="none">بدون خصم</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <!-- 4. حساب الاجر الاضافي -->
+                  <div class="form-group">
+                      <label for="overtime-basis">حساب الاجر الاضافي بناء على</label>
+                      <div class="custom-select-wrapper">
+                          <select id="overtime-basis">
+                              <option value="custom" selected>اعدادات مخصصة</option>
+                              <option value="basic">الراتب الاساسي</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <!-- 5. معامل حساب الاجر الاضافي -->
+                  <div class="form-group">
+                      <label for="overtime-factor">معامل حساب الاجر الاضافي</label>
+                      <div class="number-input-wrapper">
+                          <input type="number" id="overtime-factor" value="4">
+                      </div>
+                  </div>
+
+                  <!-- 6. عدم حساب اجر اضافي اقل من (دقيقة) -->
+                  <div class="form-group">
+                      <label for="min-overtime">عدم حساب اجر اضافي اقل من (دقيقة)</label>
+                      <div class="number-input-wrapper">
+                          <input type="number" id="min-overtime" value="30">
+                      </div>
+                  </div>
+
+                  <!-- 7. عدم حساب اجر اضافي اكثر من (دقيقة / فترة العمل) -->
+                  <div class="form-group">
+                      <label for="max-overtime">عدم حساب اجر اضافي اكثر من (دقيقة / فترة العمل)</label>
+                      <div class="number-input-wrapper">
+                          <input type="number" id="max-overtime" value="30">
+                      </div>
+                  </div>
+
+                  <!-- 8. السماح باحتساب اجر العمل الاضافي -->
+                  <div class="form-group toggle-group">
+                      <label for="allow-overtime">السماح بإحتساب اجر العمل الإضافي</label>
+                      <div class="toggle-switch">
+                          <input type="checkbox" id="allow-overtime" class="toggle-input" checked>
+                          <label for="allow-overtime" class="toggle-label"></label>
+                      </div>
+                  </div>
+
+                  <!-- 9. خصم مبلغ التأمينات الاجتماعية -->
+                  <div class="form-group toggle-group full-width">
+                      <label for="social-insurance-deduction">خصم مبلغ التأمينات الاجتماعية للموظفين السعوديين تلقائياً (9.75%)</label>
+                      <div class="toggle-switch">
+                          <input type="checkbox" id="social-insurance-deduction" class="toggle-input">
+                          <label for="social-insurance-deduction" class="toggle-label"></label>
+                      </div>
+                  </div>
+
+              </div>
+              <div class="form-footer">
+                  <button type="submit" class="btn-save">حفظ</button>
+              </div>
+          </section>
+            <!-- ================= END SALARY SETTINGS TAB (4) ================= -->
+
+            <!-- ================= START MOBILE APP TAB (5) ================= -->
+            <section id="mobile" class="tab-content">
+              <div class="mobile-settings-wrapper">
+                  <h3 class="mobile-settings-title">التحكم بالواجهات الخاصة بتطبيق الموظفين</h3>
+
+                  <!-- Horizontal Quick Actions Bar -->
+                  <div class="quick-actions-bar">
+                      <div class="action-item"><input type="radio" name="quick-action" id="qa-requests" checked><label for="qa-requests">طلباتي</label></div>
+                      <div class="action-item"><input type="radio" name="quick-action" id="qa-vacations"><label for="qa-vacations">الاجازات</label></div>
+                      <div class="action-item"><input type="radio" name="quick-action" id="qa-forgot-checkout"><label for="qa-forgot-checkout">بصمة خروج منسية</label></div>
+                      <div class="action-item"><input type="radio" name="quick-action" id="qa-forgot-checkin"><label for="qa-forgot-checkin">بصمة دخول منسية</label></div>
+                      <div class="action-item"><input type="radio" name="quick-action" id="qa-loan"><label for="qa-loan">سلفة مالية</label></div>
+                      <div class="action-item"><input type="radio" name="quick-action" id="qa-work-trip"><label for="qa-work-trip">رحلة عمل</label></div>
+                      <div class="action-item"><input type="radio" name="quick-action" id="qa-resign"><label for="qa-resign">استقالة</label></div>
+                      <div class="action-item"><input type="radio" name="quick-action" id="qa-change-location"><label for="qa-change-location">تغيير مواقع</label></div>
+                      <div class="action-item"><input type="radio" name="quick-action" id="qa-change-schedule"><label for="qa-change-schedule">تغيير اوقات العمل</label></div>
+                  </div>
+
+                  <!-- Interface Toggles Grid -->
+                  <div class="interface-grid">
+                      <div class="interface-item">
+                          <div class="icon-bg"><i class="fas fa-calendar-check"></i></div>
+                          <span class="interface-label">ملخص الاسبوع</span>
+                          <div class="custom-checkbox"><input type="checkbox" id="if-summary" checked><label for="if-summary"></label></div>
+                      </div>
+                      <div class="interface-item">
+                          <div class="icon-bg"><i class="fas fa-fingerprint"></i></div>
+                          <span class="interface-label">الحضور والانصراف</span>
+                          <div class="custom-checkbox"><input type="checkbox" id="if-attendance" checked><label for="if-attendance"></label></div>
+                      </div>
+                      <div class="interface-item">
+                          <div class="icon-bg"><i class="fas fa-user-circle"></i></div>
+                          <span class="interface-label">حسابي</span>
+                          <div class="custom-checkbox"><input type="checkbox" id="if-account" checked><label for="if-account"></label></div>
+                      </div>
+                      <div class="interface-item">
+                          <div class="icon-bg"><i class="fas fa-sign-out-alt"></i></div>
+                          <span class="interface-label">بصمة خروج منسية</span>
+                          <div class="custom-checkbox"><input type="checkbox" id="if-forgot-checkout" checked><label for="if-forgot-checkout"></label></div>
+                      </div>
+                      <div class="interface-item">
+                          <div class="icon-bg"><i class="fas fa-exclamation-triangle"></i></div>
+                          <span class="interface-label">التنبيهات</span>
+                          <div class="custom-checkbox"><input type="checkbox" id="if-alerts" checked><label for="if-alerts"></label></div>
+                      </div>
+                      <div class="interface-item">
+                          <div class="icon-bg"><i class="fas fa-calendar-alt"></i></div>
+                          <span class="interface-label">كشف الاجازات</span>
+                          <div class="custom-checkbox"><input type="checkbox" id="if-vacations"><label for="if-vacations"></label></div>
+                      </div>
+                      <div class="interface-item">
+                          <div class="icon-bg"><i class="fas fa-calendar-day"></i></div>
+                          <span class="interface-label">كشف الحضور</span>
+                          <div class="custom-checkbox"><input type="checkbox" id="if-attendance-log"><label for="if-attendance-log"></label></div>
+                      </div>
+                      <div class="interface-item">
+                          <div class="icon-bg"><i class="fas fa-file-invoice-dollar"></i></div>
+                          <span class="interface-label">مسير الرواتب</span>
+                          <div class="custom-checkbox"><input type="checkbox" id="if-payroll"><label for="if-payroll"></label></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-footer">
+                  <button type="submit" class="btn-save">حفظ</button>
+              </div>
+          </section>
+            <!-- ================= END MOBILE APP TAB (5) ================= -->
+
+            <!-- ================= START DOCUMENTS TAB (6) ================= -->
+            <section id="documents" class="tab-content">
+              <div class="documents-list-container">
+                  <!-- سيتم إضافة المستندات هنا بواسطة JavaScript -->
+              </div>
+              <div class="document-item add-new-doc-btn">
+                  <div class="doc-actions">
+                      <button class="doc-action-btn add-btn"><i class="fas fa-plus"></i></button>
+                      <div class="doc-icon-placeholder"></div>
+                  </div>
+                  <span class="doc-name">اضافة مستند</span>
+              </div>
+          </section>
+
+    <!-- ================= START EDIT DOCUMENT MODAL ================= -->
+    <div id="edit-doc-modal" class="modal-overlay" style="display: none;">
+      <div class="modal-container small-modal">
+          <form id="edit-doc-form">
+              <input type="hidden" id="edit-doc-id">
+              <div class="modal-header">
+                  <h2 id="edit-doc-modal-title">تعديل المستند</h2>
+              </div>
+              <div class="modal-body">
+                  <div class="form-grid">
+                      <div class="form-group">
+                          <label for="issue-date">تاريخ الاصدار</label>
+                          <input type="date" id="issue-date" class="date-input">
+                      </div>
+                      <div class="form-group">
+                          <label for="expiry-date">تاريخ الانتهاء</label>
+                          <input type="date" id="expiry-date" class="date-input">
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer-split">
+                  <button type="submit" class="btn-modal-save">حفظ</button>
+                  <button type="button" class="btn-modal-cancel">الغاء</button>
+              </div>
+          </form>
+      </div>
+  </div>
+            <!-- ================= END DOCUMENTS TAB (6) ================= -->
+
+            <!-- ================= START VACATIONS SETTINGS TAB (7) ================= -->
+            <section id="vacations" class="tab-content">
+              <div class="vacation-settings-header">
+                  <h3>اعدادات الاجازة السنوية</h3>
+              </div>
+              <div class="form-grid">
+                  
+                  <!-- 1. عدد الأيام المستحقة في السنة -->
+                  <div class="form-group">
+                      <label for="annual-leave-days">عدد الأيام المستحقة في السنة</label>
+                      <div class="custom-select-wrapper">
+                          <select id="annual-leave-days">
+                              <option value="60" selected>60</option>
+                              <option value="30">30</option>
+                              <option value="21">21</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <!-- 2. حساب رصيد الاجازة السنوية -->
+                  <div class="form-group">
+                      <label for="annual-leave-basis">حساب رصيد الاجازة السنوية</label>
+                      <div class="custom-select-wrapper">
+                          <select id="annual-leave-basis">
+                              <option value="yearly" selected>سنوي</option>
+                              <option value="monthly">شهري</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <!-- 3. رصيد الاجازات يبدأ بعد مدة من التعيين -->
+                  <div class="form-group">
+                      <label for="leave-start-period">رصيد الاجازات يبدأ بعد مدة من التعيين</label>
+                      <div class="custom-select-wrapper">
+                          <select id="leave-start-period">
+                              <option value="3" selected>3 شهور</option>
+                              <option value="6">6 شهور</option>
+                              <option value="1">شهر واحد</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <!-- 4. لا يحتسب رصيد الاجازة قبل إتمام [مدة] من تاريخ التعيين -->
+                  <div class="form-group">
+                      <label for="leave-calculation-delay">لا يحتسب رصيد الاجازة قبل إتمام [مدة] من تاريخ التعيين</label>
+                      <div class="custom-select-wrapper">
+                          <select id="leave-calculation-delay">
+                              <option value="4" selected>4 شهور</option>
+                              <option value="3">3 شهور</option>
+                              <option value="6">6 شهور</option>
+                          </select>
+                      </div>
+                  </div>
+
+              </div>
+              <div class="form-footer">
+                  <button type="submit" class="btn-save">حفظ</button>
+              </div>
+          </section>
+            <!-- ================= END VACATIONS SETTINGS TAB (7) ================= -->
+
+            <!-- ================= START COVENANTS TAB (8) ================= -->
+            <section id="covenants" class="tab-content">
+              <!-- Covenants Header -->
+              <div class="covenants-header">
+                  <div class="covenants-actions">
+                      <button class="covenant-btn"><i class="fas fa-filter"></i> تصنيف</button>
+                  </div>
+                  <div class="covenants-search">
+                      <i class="fas fa-search"></i>
+                      <input type="text" placeholder="البحث">
+                  </div>
+                  <div class="covenants-actions">
+                      <button class="covenant-btn"><i class="fas fa-print"></i> طباعة</button>
+                      <button class="covenant-btn"><i class="fas fa-download"></i> تصدير</button>
+                  </div>
+              </div>
+
+              <!-- Covenants List -->
+              <div class="covenants-list">
+                  <!-- List Header -->
+                  <div class="covenant-item list-header">
+                      <span>الرقم الوظيفي</span>
+                      <span>الاسم</span>
+                      <span>نوع العهدة</span>
+                      <span>تاريخ استلام العهدة</span>
+                      <span>تاريخ استرجاع العهدة</span>
+                      <span>التحكم</span>
+                  </div>
+                  <!-- سيتم إضافة العهد هنا بواسطة JavaScript -->
+              </div>
+
+              <!-- Covenants Pagination -->
+              <div class="covenants-pagination">
+                  <a href="#" class="page-arrow"><i class="fas fa-chevron-right"></i></a>
+                  <a href="#" class="page-number">1</a>
+                  <a href="#" class="page-number active">2</a>
+                  <a href="#" class="page-number">3</a>
+                  <a href="#" class="page-number">4</a>
+                  <a href="#" class="page-number">5</a>
+                  <a href="#" class="page-arrow"><i class="fas fa-chevron-left"></i></a>
+              </div>
+          </section>
+          <!-- ================= END COVENANTS TAB (8) ================= -->
+
+    </div>
+</div>
+<!-- ========== END SETTINGS CONTAINER ========== -->
+
+
+
+
+
+    <!-- Bootstrap-->
+    <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>  
+    <!-- AOS Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init( );</script>
+    <!-- Custom JS -->
+    <script src="../assets/JS/script.js"></script>
+    <script src="../assets/JS/settings.js"></script>
+
+
+</body>
+</html>

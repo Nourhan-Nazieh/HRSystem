@@ -1,0 +1,270 @@
+/* ==================================================
+   WORK TIMES PAGE - PRO, ACTIVE & CHIC STYLES
+   ================================================== */
+
+/* --- Page Layout --- */
+body {
+    background-color: #f8f9fe;
+    font-family: 'Almarai', sans-serif;
+}
+.page-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* --- Main Card --- */
+.table-main-card {
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 25px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.05);
+}
+
+/* ======== Table Header: Search & Actions ======== */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-bottom: 25px;
+    background-color: #f9fafc;
+    border-radius: 14px;
+    border: 1px solid #e0e2e7;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.header-actions .action-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #d8dde6;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 50px;
+    height: 44px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.header-actions .action-btn:hover {
+    background-color: #f1f3f6;
+    border-color: #b0b4bb;
+    color: #333;
+    transform: translateY(-1px);
+}
+
+/* --- Search Bar --- */
+.search-bar {
+    position: relative;
+    max-width: 600px;
+}
+
+.search-bar input {
+    width: 100%;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid #d8dde6;
+    background-color: #fff;
+    padding: 0 40px 0 15px; /* مساحة للأيقونة */
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.search-bar i {
+    position: absolute;
+    top: 50%;
+    right: 12px; /* قللنا القيمة عشان تظل داخل الصندوق */
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+/* --- Responsive Adjustments for search icon --- */
+@media (max-width: 768px) {
+    .search-bar input {
+        padding: 0 40px 0 12px; /* تعديل padding */
+        font-size: 14px;
+        height: 50px;
+    }
+    .search-bar i {
+        right: 10px; /* تحريك الأيقونة للداخل */
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar input {
+        padding: 0 35px 0 10px;
+        font-size: 13px;
+        height: 45px;
+    }
+    .search-bar i {
+        right: 8px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    .search-bar input {
+        padding: 0 30px 0 8px;
+        font-size: 12px;
+        height: 42px;
+    }
+    .search-bar i {
+        right: 6px;
+        font-size: 12px;
+    }
+}
+
+
+/* --- Table Styles --- */
+.table-responsive-pro {
+    max-height: 65vh;
+    overflow-y: auto;
+    padding-right: 5px; /* Space for scrollbar */
+}
+.work-times-table {
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    margin-top: -12px;
+}
+.work-times-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.work-times-table thead th {
+    border: none;
+    padding: 18px 25px;
+    font-size: 14px;
+    color: #8A909D;
+    text-align: right;
+    font-weight: 700;
+    background-color: #f9fafc;
+}
+.work-times-table thead th:first-child { border-top-right-radius: 16px; border-bottom-right-radius: 16px; }
+.work-times-table thead th:last-child { border-top-left-radius: 16px; border-bottom-left-radius: 16px; }
+
+.work-times-table tbody tr {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease-in-out;
+}
+.work-times-table tbody tr.hidden { display: none; }
+.work-times-table tbody tr:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    z-index: 5;
+    position: relative;
+}
+.work-times-table tbody td {
+    border: none;
+    padding: 22px 25px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
+    vertical-align: middle;
+}
+.work-times-table tbody td:first-child { border-top-right-radius: 16px; border-bottom-right-radius: 16px; }
+.work-times-table tbody td:last-child { border-top-left-radius: 16px; border-bottom-left-radius: 16px; }
+
+.controls-cell { display: flex; gap: 10px; }
+.control-btn {
+    background-color: #f1f3f6;
+    border: none;
+    color: #888;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+.control-btn.edit-btn:hover { background-color: #E3F2FD; color: #1565C0; }
+.control-btn.delete-btn:hover { background-color: #FFEBEE; color: #D32F2F; }
+
+/* --- Modal Styles --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+.modal-overlay:not(.hidden) { opacity: 1; visibility: visible; }
+.modal-card {
+    background: #e5eaf3;
+    border-radius: 20px;
+    padding: 35px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 15px; left: 15px;
+    background: #f1f3f6;
+    border: none;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+.modal-title { font-weight: 800; margin-bottom: 25px; }
+.modal-form-group { margin-bottom: 20px; }
+.modal-form-group label { font-weight: 700; margin-bottom: 8px; display: block; }
+.modal-form-group .form-control {
+    height: 50px;
+    border-radius: 12px;
+    border: 1px solid #eef2f7;
+    background-color: #f9fafc;
+}
+.modal-form-group .btn-primary {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: #2D3039;
+    border: none;
+    font-weight: 700;
+}
+
+/* Custom Scrollbar */
+.table-responsive-pro::-webkit-scrollbar { width: 8px; }
+.table-responsive-pro::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+.table-responsive-pro::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+.table-responsive-pro::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+/* =========================== RESPONSIVE ADJUSTMENTS =========================== */
+
+@media (max-width: 768px) {
+    .table-main-card { padding: 20px; }
+    .search-bar input { font-size: 14px; height: 45px; }
+    .work-times-table tbody td { padding: 18px 15px; font-size: 14px; }
+}
+@media (max-width: 576px) {
+    .work-times-table { min-width: 500px; }
+    .work-times-table tbody td { padding: 15px 10px; font-size: 13px; }
+}
+@media (max-width: 360px) {
+    .header-actions .action-btn { padding: 6px 12px; font-size: 12px; }
+    .work-times-table { min-width: 450px; }
+}

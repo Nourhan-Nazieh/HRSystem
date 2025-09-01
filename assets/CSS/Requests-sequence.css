@@ -1,0 +1,179 @@
+
+/* --- Page Layout --- */
+body {
+    background-color: #f8f9fe;
+    font-family: 'Almarai', sans-serif;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* --- Header: Search & Actions --- */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.search-bar {
+    position: relative;
+    flex-grow: 1;
+    max-width: 600px;
+}
+.search-bar i {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #999;
+}
+.search-bar input {
+    width: 100%;
+    height: 55px;
+    border-radius: 16px;
+    border: 1px solid #eef2f7;
+    background-color: #fff;
+    padding: 0 55px 0 20px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.search-bar input:focus {
+    outline: none;
+    border-color: #4A80FF;
+    box-shadow: 0 0 0 4px rgba(74, 128, 255, 0.1);
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+.header-actions .action-btn {
+    background-color: #fff;
+    border: 1px solid #eef2f7;
+    color: #555;
+    height: 55px;
+    padding: 0 50px;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- Requests Grid --- */
+.requests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.request-card {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+.request-card.hidden {
+    display: none;
+}
+.request-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.request-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #333;
+}
+.request-status-tag {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+}
+.tag-yellow { background-color: #FFF8E1; color: #F9A825; }
+.tag-green { background-color: #E8F5E9; color: #388E3C; }
+
+.view-btn {
+    background-color: #eef2f7;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    color: #888;
+    font-size: 14px;
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.main-status {
+    font-size: 24px;
+    font-weight: 800;
+    color: #2D3039;
+}
+.main-status.rejected {
+    color: #D32F2F;
+}
+
+.card-footer {
+    display: flex;
+    gap: 15px;
+}
+.btn-action {
+    flex-grow: 1;
+    height: 50px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 800;
+    border: none;
+    transition: all 0.2s ease;
+}
+.btn-delete {
+    background-color: #D32F2F;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.25);
+}
+.btn-delete:hover {
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+}
+.btn-edit {
+    background-color: #1E88E5;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(30, 136, 229, 0.25);
+}
+.btn-edit:hover {
+    background-color: #1565C0;
+    transform: translateY(-2px);
+}
+
+/* --- Card Deleting Animation --- */
+.request-card.deleting {
+    transition: all 0.4s ease;
+    transform: scale(0.8);
+    opacity: 0;
+}
