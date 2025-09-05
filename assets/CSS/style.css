@@ -409,6 +409,80 @@ body.sidebar-open .sidebar-backdrop {
 .nav-item.has-submenu > a:hover .arrow {
   background: rgba(255, 255, 255, 0.2);
 }
+/* ================= RESPONSIVE NAVIGATION ================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .nav-tabs-wrapper {
+    overflow-x: auto;
+    scrollbar-width: none; /* hide scrollbar */
+  }
+  .nav-tabs-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-tab-item {
+    min-width: 120px;
+  }
+
+  .nav-tab-content {
+    padding: 10px 14px;
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .tab-icon i {
+    font-size: 14px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 576px) {
+  .nav-tabs-container {
+    gap: 6px;
+  }
+
+  .nav-tabs-wrapper {
+    gap: 6px;
+    padding: 2px;
+  }
+
+  .nav-tab-item {
+    min-width: 100px;
+  }
+
+  .nav-tab-content {
+    padding: 8px 10px;
+    font-size: 12px;
+    border-radius: 10px;
+    gap: 4px;
+  }
+
+  .tab-icon i {
+    font-size: 13px;
+  }
+
+  /* arrows hidden on small screens (swipe only) */
+  .nav-arrow {
+    display: none;
+  }
+}
+
+/* Very Small Devices */
+@media (max-width: 380px) {
+  .nav-tab-item {
+    min-width: 90px;
+  }
+
+  .nav-tab-content {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+
+  .tab-icon i {
+    font-size: 12px;
+  }
+}
 
 /* Enhanced Submenu */
 .submenu {
@@ -620,7 +694,9 @@ body.sidebar-open .sidebar-backdrop {
 }
 
 .main-header {
-  background: var(--white);
+  background: var(--gradient-primary);
+  color: var(--white);
+
   padding: 12px var(--gutter);
   display: flex;
   justify-content: space-between;
@@ -804,7 +880,6 @@ body.sidebar-open .sidebar-backdrop {
 .badge.blue { 
   background: var(--info); 
 }
-
 /* Navigation Tabs */
 .navigation-section {
   background: var(--gradient-primary);
@@ -829,6 +904,7 @@ body.sidebar-open .sidebar-backdrop {
   padding: 4px;
 }
 
+/* Base Tab Item */
 .nav-tab-item {
   flex: 0 0 auto;
   cursor: pointer;
@@ -844,13 +920,15 @@ body.sidebar-open .sidebar-backdrop {
   transform: translateX(0);
 }
 
+/* Base Tab Content (default look) */
 .nav-tab-content {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 12px 20px;
   border-radius: 12px;
-  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1); /* ثابت خلفية شفافة */
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
   font-size: 14px;
   transition: all var(--transition-normal);
@@ -859,25 +937,28 @@ body.sidebar-open .sidebar-backdrop {
   border: 2px solid transparent;
 }
 
+/* Hover Effect */
 .nav-tab-item:not(.active):hover .nav-tab-content {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   color: var(--white);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
+/* Active Tab */
 .nav-tab-item.active .nav-tab-content {
-  background: var(--white);
-  color: var(--primary-green);
+  background: var(--accent-green); /* بدلاً من الأبيض */
+  color: var(--white);
   font-weight: 700;
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
-  border-color: var(--accent-green);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .tab-icon i {
   font-size: 16px;
 }
 
+/* Arrows */
 .nav-arrow {
   width: 40px;
   height: 40px;
@@ -1421,61 +1502,151 @@ canvas {
 }
 
 
-/* ========== RESPONSIVE DESIGN ========== */
+/* ========== RESPONSIVE DESIGN IMPROVED ========== */
+
+/* --- Large tablets / small desktops --- */
 @media (max-width: 1200px) {
   .breadcrumb-section {
-      display: none;
+    display: none;
   }
 }
 
+/* --- Tablets --- */
 @media (max-width: 992px) {
   .search-section {
-      display: none;
+    display: none;
   }
   .mobile-menu-toggle {
-      display: flex;
+    display: flex;
   }
   .navbar-container {
-      justify-content: space-between;
+    justify-content: space-between;
   }
-}
 
-@media (max-width: 767px) {
-  .profile-info {
-      display: none;
-  }
+  /* Nav tabs horizontal scroll */
   .nav-tabs-wrapper {
-      overflow-x: auto;
-      scrollbar-width: none; /* Firefox */
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
   }
   .nav-tabs-wrapper::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera */
-  }
-  .nav-arrow {
-      display: none; /* Hide arrows on mobile, rely on scroll */
-  }
-  .nav-tabs-container {
-      padding: 0;
-      background: transparent;
-  }
-  .navigation-section {
-      background: transparent;
-      padding: 0;
-      margin: 20px 0;
+    display: none; /* Chrome, Safari, Opera */
   }
 }
 
+/* --- Mobile devices --- */
+@media (max-width: 767px) {
+  .profile-info {
+    display: none;
+  }
+
+  /* Hide nav arrows and rely on swipe */
+  .nav-arrow {
+    display: none;
+  }
+  .nav-tabs-container {
+    padding: 0.3rem;
+    background: transparent;
+  }
+  .navigation-section {
+    padding: 0.5rem 0;
+    margin: 15px 0;
+  }
+
+  /* Make nav items smaller and wrap properly */
+  .nav-tab-item {
+    min-width: 90px;  /* smaller for mobile */
+    padding: 0.4rem 0.3rem;
+    font-size: 0.75rem;
+  }
+  .tab-icon i {
+    font-size: 0.9rem;
+  }
+  .tab-text {
+    font-size: 0.7rem;
+  }
+}
+
+/* --- Extra small devices / portrait phones --- */
 @media (max-width: 576px) {
-  .action-buttons {
-      /* Hide individual buttons but keep dropdowns if needed */
-      .phone-btn, .notification-btn, .message-btn {
-          display: none;
-      }
+  .action-buttons .phone-btn,
+  .action-buttons .notification-btn,
+  .action-buttons .message-btn {
+    display: none;
   }
+
   .stat-content {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
+
+  /* Nav items can shrink more if needed */
+  .nav-tab-item {
+    min-width: 80px;
+    padding: 0.3rem 0.2rem;
+  }
+  .tab-icon i {
+    font-size: 0.8rem;
+  }
+  .tab-text {
+    font-size: 0.65rem;
+  }
+}
+@media (max-width: 767px) {
+  /* Show arrows again */
+  .nav-arrow {
+      display: flex; /* or inline-flex */
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      background: var(--primary-green, #198754);
+      color: #fff;
+      padding: 0.4rem 0.6rem;
+      border-radius: 50%;
+      font-size: 1rem;
+  }
+
+  /* Adjust container padding so arrows لا تتداخل */
+  .nav-tabs-container {
+      padding: 0 2rem; /* leave space for arrows */
+      background: transparent;
+      position: relative;
+  }
+}
+/* Nav arrows - fixed left/right */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: var(--primary-green, #198754);
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Left arrow */
+#navLeft {
+  left: 0.5rem; /* مسافة من اليسار */
+}
+
+/* Right arrow */
+#navRight {
+  right: 0.5rem; /* مسافة من اليمين */
+}
+
+/* Adjust container padding so arrows don't overlap tabs */
+.nav-tabs-container {
+  position: relative;
+  padding: 0 2.5rem; /* leave space for arrows */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 

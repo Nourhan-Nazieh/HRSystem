@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
     loader.style.opacity = "0";
     loader.style.transition = "opacity 0.8s ease";
     setTimeout(() => loader.style.display = "none", 800);
-  }, 2500); // يختفي بعد 2.5 ثانية
+  }, 2200); // يختفي بعد 2.5 ثانية
 });
 
 
@@ -404,6 +404,18 @@ document.addEventListener('DOMContentLoaded', function () {
     NavigationAnimator.init();
     window.NavigationAnimator = NavigationAnimator;
   });
+
+  const wrapper = document.getElementById("tabsWrapper");
+const navLeft = document.getElementById("navLeft");
+const navRight = document.getElementById("navRight");
+
+navLeft.addEventListener("click", () => {
+  wrapper.scrollBy({ left: -200, behavior: "smooth" });
+});
+navRight.addEventListener("click", () => {
+  wrapper.scrollBy({ left: 200, behavior: "smooth" });
+});
+
 // =======================  
 // زرار التوجل في الميني سايد بار (Desktop toggle)
 const toggleMainSidebar = document.getElementById("toggleMainSidebar");
