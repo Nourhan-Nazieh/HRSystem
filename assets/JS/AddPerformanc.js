@@ -79,3 +79,58 @@ document.addEventListener('DOMContentLoaded', function () {
     setupSelectAll('check-all-depts', 'departments-list');
     setupSelectAll('check-all-emps', 'employees-list');
 });
+// ======================================
+document.addEventListener('DOMContentLoaded', function ( ) {
+    AOS.init({ duration: 600, once: true });
+
+    // --- تفعيل flatpickr للتواريخ ---
+    flatpickr("#date-picker", {
+        mode: "range",
+        dateFormat: "Y-m-d",
+        locale: "ar" // يمكن إضافة ملف لغة عربي إذا أردت
+    });
+
+    // --- تفعيل Choices.js للقوائم ---
+    const departmentsSelect = new Choices('#departments-select', {
+        removeItemButton: true,
+        placeholder: true,
+        placeholderValue: 'اختر قسم أو أكثر...',
+        searchPlaceholderValue: 'ابحث عن قسم...',
+    });
+    const employeesSelect = new Choices('#employees-select', {
+        removeItemButton: true,
+        placeholder: true,
+        placeholderValue: 'اختر موظف أو أكثر...',
+        searchPlaceholderValue: 'ابحث عن موظف...',
+    });
+
+    // --- منطق النجوم التفاعلية (من الكود الأصلي) ---
+    const stars = document.querySelectorAll('#interactive-stars i');
+    const ratingValue = document.getElementById('rating-value');
+    stars.forEach(star => {
+        star.addEventListener('click', () => {
+            ratingValue.value = star.dataset.value;
+            stars.forEach(s => s.classList.remove('selected', 'fas'));
+            for (let i = 0; i < ratingValue.value; i++) {
+                stars[i].classList.add('selected', 'fas');
+            }
+        });
+    });
+
+    // --- منطق إرسال الفورم ---
+    const form = document.getElementById('performance-form');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // منع الإرسال التقليدي
+        Swal.fire({
+            title: 'تم بنجاح!',
+            text: 'لقد تم إرسال التقييم بنجاح.',
+            icon: 'success',
+            confirmButtonText: 'رائع',
+            confirmButtonColor: '#2D3039'
+        }).then(() => {
+            form.reset(); // إعادة تعيين الفورم
+            departmentsSelect.clearStore(); // مسح اختيارات الأقسام
+            employeesSelect.clearStore(); // مسح اختيارات الموظفين
+        });
+    });
+});

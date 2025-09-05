@@ -122,3 +122,69 @@ document.addEventListener('DOMContentLoaded', () => {
     // العرض الأولي
     renderPermissions();
 });
+
+// ============
+
+document.addEventListener('DOMContentLoaded', function ( ) {
+    AOS.init({ duration: 600, once: true });
+
+    // --- Dummy Data ---
+    let permissionsData = [
+        { id: 1, name: 'مدير نظام' }, { id: 2, name: 'مشرف' },
+        { id: 3, name: 'مدير القسم' }, { id: 4, name: 'موارد بشرية' }
+    ];
+
+    // --- عناصر الواجهة ---
+    const listContainer = document.getElementById('permissions-list');
+    const modal = document.getElementById('permission-modal');
+    const addNewBtn = document.getElementById('add-new-btn');
+    const closeModalBtn = modal.querySelector('.modal-close-btn');
+    const cancelBtn = modal.querySelector('.btn-cancel');
+
+    // --- وظيفة عرض البيانات ---
+    function renderList() {
+        const items = listContainer.querySelectorAll('.list-item:not(.list-header)');
+        items.forEach(item => item.remove()); // Clear existing items
+        permissionsData.forEach(perm => {
+            const itemHTML = `
+                <div class="list-item" data-id="${perm.id}">
+                    <span class="item-name">${perm.name}</span>
+                    <div class="item-actions">
+                        <button class="btn-action btn-edit">تعديل</button>
+                        <button class="btn-action btn-delete">حذف</button>
+                    </div>
+                </div>`;
+            listContainer.insertAdjacentHTML('beforeend', itemHTML);
+        });
+    }
+
+    // --- وظائف المودال ---
+    const openModal = () => modal.classList.remove('hidden');
+    const closeModal = () => modal.classList.add('hidden');
+
+    addNewBtn.addEventListener('click', openModal);
+    closeModalBtn.addEventListener('click', closeModal);
+    cancelBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+    // --- منطق الحذف ---
+    listContainer.addEventListener('click', (e) => {
+        if (e.target.classList.contains('btn-delete')) {
+            Swal.fire({
+                title: 'هل أنت متأكد؟', text: "لا يمكن التراجع عن هذا الإجراء!", icon: 'warning',
+                showCancelButton: true, confirmButtonColor: '#dc3545', cancelButtonText: 'إلغاء', confirmButtonText: 'نعم، احذفه!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const item = e.target.closest('.list-item');
+                    const id = parseInt(item.dataset.id, 10);
+                    permissionsData = permissionsData.filter(p => p.id !== id);
+                    renderList();
+                    Swal.fire('تم الحذف!', 'تم حذف المجموعة بنجاح.', 'success');
+                }
+            });
+        }
+    });
+
+    // --- العرض الأولي للبيانات ---
+    renderList();
+});

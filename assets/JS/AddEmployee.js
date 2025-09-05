@@ -197,3 +197,87 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- Initial Setup ---
     updateStepper();
 });
+// ====================================
+document.addEventListener('DOMContentLoaded', function ( ) {
+    AOS.init({ duration: 600, once: true });
+
+    // --- تفعيل المكتبات المساعدة ---
+    flatpickr(".date-picker", { dateFormat: "Y-m-d" });
+    document.querySelectorAll('.form-select-custom').forEach(select => new Choices(select, { searchEnabled: false, itemSelectText: '' }));
+
+    // --- منطق معالج الخطوات (Wizard) ---
+    const prevBtn = document.querySelector('.btn-nav-prev');
+    const nextBtn = document.querySelector('.btn-nav-next');
+    const formSteps = document.querySelectorAll('.form-step');
+    const stepperItems = document.querySelectorAll('.stepper-item');
+    let currentStep = 1;
+
+    function updateFormSteps() {
+        formSteps.forEach(step => step.classList.remove('active'));
+        formSteps[currentStep - 1].classList.add('active');
+    }
+
+    function updateStepper() {
+        stepperItems.forEach((item, index) => {
+            if (index < currentStep) {
+                item.classList.add('completed');
+                item.classList.remove('active');
+            } else if (index === currentStep - 1) {
+                item.classList.add('active');
+                item.classList.remove('completed');
+            } else {
+                item.classList.remove('active', 'completed');
+            }
+        });
+        prevBtn.classList.toggle('hidden', currentStep === 1);
+        nextBtn.textContent = currentStep === formSteps.length ? 'إرسال' : 'التالي';
+    }
+
+    function validateStep() {
+        const currentFormStep = formSteps[currentStep - 1];
+        const inputs = currentFormStep.querySelectorAll('input[required], select[required]');
+        let isValid = true;
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                input.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                input.classList.remove('is-invalid');
+            }
+        });
+        return isValid;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        if (validateStep()) {
+            if (currentStep < formSteps.length) {
+                currentStep++;
+                updateFormSteps();
+                updateStepper();
+            } else {
+                // Submit form
+                Swal.fire({
+                    title: 'تم بنجاح!',
+                    text: 'لقد تم إضافة الموظف بنجاح.',
+                    icon: 'success',
+                    confirmButtonText: 'رائع'
+                }).then(() => {
+                    document.getElementById('add-employee-form').reset();
+                    currentStep = 1;
+                    updateFormSteps();
+                    updateStepper();
+                });
+            }
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentStep > 1) {
+            currentStep--;
+            updateFormSteps();
+            updateStepper();
+        }
+    });
+
+    updateStepper();
+});

@@ -60,3 +60,78 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+// =========================
+document.addEventListener('DOMContentLoaded', function ( ) {
+    AOS.init({ duration: 600, once: true });
+
+    // --- عناصر الواجهة ---
+    const searchInput = document.getElementById('search-input');
+    const filterButtons = document.getElementById('filter-buttons');
+    const appraisalsGrid = document.getElementById('appraisals-grid');
+    const allCards = appraisalsGrid.querySelectorAll('.appraisal-card');
+    const detailsModal = document.getElementById('details-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+
+    // --- 1. وظيفة رسم النجوم (تفعيل عرض التقييم) ---
+    function renderStars() {
+        document.querySelectorAll('.rating-stars').forEach(starContainer => {
+            const rating = parseInt(starContainer.dataset.rating, 10);
+            starContainer.innerHTML = ''; // Clear existing stars
+            for (let i = 1; i <= 5; i++) {
+                const starIcon = document.createElement('i');
+                starIcon.className = `fas fa-star star ${i <= rating ? 'filled' : 'empty'}`;
+                starContainer.appendChild(starIcon);
+            }
+        });
+    }
+
+    // --- 2. وظيفة الفلترة والبحث الشاملة ---
+    function filterAndSearch() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const activeFilter = filterButtons.querySelector('.active').dataset.filter;
+
+        allCards.forEach(card => {
+            const employee = card.dataset.employee.toLowerCase();
+            const title = card.dataset.title.toLowerCase();
+            const status = card.dataset.status;
+
+            const searchMatch = employee.includes(searchTerm) || title.includes(searchTerm);
+            const filterMatch = (activeFilter === 'all') || (status === activeFilter);
+
+            card.style.display = (searchMatch && filterMatch) ? 'block' : 'none';
+        });
+    }
+
+    // --- 3. وظائف المودال ---
+    function openModal(card) {
+        document.getElementById('modal-title').textContent = card.dataset.title;
+        document.getElementById('modal-employee').textContent = card.dataset.employee;
+        document.getElementById('modal-status').innerHTML = card.querySelector('.status-tag').outerHTML;
+        document.getElementById('modal-rating').innerHTML = card.querySelector('.rating-stars').innerHTML;
+        detailsModal.classList.add('active');
+    }
+    function closeModal() {
+        detailsModal.classList.remove('active');
+    }
+
+    // --- ربط الأحداث ---
+    renderStars(); // ارسم النجوم عند تحميل الصفحة
+    searchInput.addEventListener('keyup', filterAndSearch);
+    closeModalBtn.addEventListener('click', closeModal);
+    detailsModal.addEventListener('click', (e) => { if(e.target === detailsModal) closeModal(); });
+
+    filterButtons.addEventListener('click', (e) => {
+        if (e.target.classList.contains('filter-btn')) {
+            filterButtons.querySelector('.active').classList.remove('active');
+            e.target.classList.add('active');
+            filterAndSearch();
+        }
+    });
+
+    appraisalsGrid.addEventListener('click', (e) => {
+        const card = e.target.closest('.appraisal-card');
+        if (card) {
+            openModal(card);
+        }
+    });
+});

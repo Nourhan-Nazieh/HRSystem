@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // تفعيل مكتبة الأنيميشن
-    AOS.init({
-        duration: 600,
-        once: true,
-    });
+    AOS.init({ duration: 600, once: true });
 
     // --- Search Filter Logic ---
     const searchInput = document.getElementById('search-input');
@@ -14,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const searchTerm = event.target.value.toLowerCase();
 
         cards.forEach(card => {
-            // البحث في عنوان الطلب وحالته
             const title = card.dataset.title.toLowerCase();
             const status = card.dataset.status.toLowerCase();
 
@@ -26,10 +22,26 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // --- Delete Card Logic with SweetAlert2 ---
-    requestsGrid.addEventListener('click', function(event) {
-        if (event.target.classList.contains('btn-delete')) {
-            const cardToDelete = event.target.closest('.request-card');
+    // --- Filtering Logic with Pills ---
+    const filterPills = document.getElementById('filter-pills-status');
+    filterPills.addEventListener('click', function(e) {
+        if (e.target.classList.contains('filter-pill')) {
+            this.querySelector('.active').classList.remove('active');
+            e.target.classList.add('active');
+            const filterValue = e.target.dataset.filter;
+            
+            requestsGrid.querySelectorAll('.request-card').forEach(card => {
+                const cardStatus = card.dataset.status;
+                card.style.display = (filterValue === 'all' || filterValue === cardStatus) ? 'block' : 'none';
+            });
+        }
+    });
+
+    // --- Delete Card Logic with SweetAlert2 Modal ---
+    requestsGrid.addEventListener('click', function(e) {
+        const deleteBtn = e.target.closest('.btn-delete');
+        if (deleteBtn) {
+            const cardToDelete = deleteBtn.closest('.request-card');
 
             Swal.fire({
                 title: 'هل أنت متأكد؟',
@@ -42,10 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 cancelButtonText: 'إلغاء'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // Add deleting class for animation
+                    // Add deleting class for animation (اختياري لو عندك CSS للـ animation)
                     cardToDelete.classList.add('deleting');
-                    
-                    // Remove the card from the DOM after the animation ends
+
+                    // إزالة الكارد بعد انتهاء أنيميشن (أو مباشرة)
                     cardToDelete.addEventListener('transitionend', () => {
                         cardToDelete.remove();
                         Swal.fire(

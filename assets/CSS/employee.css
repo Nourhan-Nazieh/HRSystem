@@ -288,3 +288,15 @@ body {
     .control-btn { width: 30px; height: 30px; font-size: 12px; }
     .table-pagination a { width: 30px; height: 30px; font-size: 11px; }
 }
+
+
+.employee-avatar { display: flex; align-items: center; gap: 15px; }
+.employee-avatar img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.control-cell { position: relative; }
+.control-dropdown { position: absolute; top: 100%; left: 0; background: #fff; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1 ); z-index: 10; width: 180px; overflow: hidden; display: none; }
+.control-dropdown.show { display: block; }
+.control-dropdown a { display: block; padding: 10px 15px; color: #333; text-decoration: none; }
+.control-dropdown a:hover { background-color: #f8f9fa; }
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; z-index: 1500; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+.modal-overlay.active { opacity: 1; visibility: visible; }
+.modal-container { background: #fff; border-radius: 16px; padding: 30px; width: 90%; max-width: 500px; }

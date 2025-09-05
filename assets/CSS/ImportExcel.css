@@ -1,6 +1,4 @@
-/* ==================================================
-   IMPORT FROM EXCEL PAGE - PREMIUM & ACTIVE STYLES
-   ================================================== */
+
 
 /* --- Page Layout --- */
 body {
@@ -155,3 +153,6 @@ body {
     background-color: #000 !important;
     transform: translateY(-3px) !important;
 }
+.progress-container { display: none; margin-top: 20px; }
+.progress { height: 10px; border-radius: 5px; background-color: #e9ecef; }
+.progress-bar { background-color: #28a745; transition: width 0.4s ease; }

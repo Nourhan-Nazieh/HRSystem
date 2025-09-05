@@ -269,3 +269,47 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCovenants();
     }
     // ================= END COVENANTS TAB INTERACTIVITY (8) =================
+    document.addEventListener('DOMContentLoaded', function ( ) {
+        AOS.init({ duration: 600, once: true });
+
+        // --- تفعيل المكتبات المساعدة ---
+        document.querySelectorAll('select').forEach(select => new Choices(select, { searchEnabled: false, itemSelectText: '' }));
+
+        // --- منطق التبويبات ---
+        const tabs = document.querySelectorAll('.tab-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const target = document.getElementById(tab.dataset.tab);
+                tabContents.forEach(tc => tc.classList.remove('active'));
+                target.classList.add('active');
+            });
+        });
+
+        // --- منطق رفع الشعار ---
+        const logoUploader = document.getElementById('logo-uploader');
+        const logoInput = document.getElementById('logo-input');
+        const logoPreview = logoUploader.querySelector('.logo-preview');
+        logoUploader.addEventListener('click', () => logoInput.click());
+        logoInput.addEventListener('change', () => {
+            if (logoInput.files && logoInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    logoPreview.src = e.target.result;
+                    logoPreview.style.display = 'block';
+                };
+                reader.readAsDataURL(logoInput.files[0]);
+            }
+        });
+
+        // --- منطق حفظ التغييرات ---
+        document.querySelectorAll('.btn-save').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                Swal.fire('تم الحفظ!', 'تم حفظ التغييرات بنجاح.', 'success');
+            });
+        });
+    });

@@ -661,3 +661,49 @@ body {
     .modal-footer { flex-direction: column-reverse; gap: 10px; }
 }
 
+
+/* ================= Actions Buttons ================= */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* مسافة بين الأزرار */
+  }
+  
+  .action-buttons button {
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+  }
+  
+  /* الألوان */
+  .delete-btn {
+    background-color: #ffe6e6;
+    color: #ff0000;
+  }
+  .delete-btn:hover { background-color: #ffcccc; }
+  
+  .edit-btn {
+    background-color: #e6f0ff;
+    color: #0066ff;
+  }
+  .edit-btn:hover { background-color: #cce0ff; }
+  
+  .change-region-btn {
+    background-color: #fff8e6;
+    color: #d4a017;
+  }
+  .change-region-btn:hover { background-color: #ffeebf; }
+  
+  /* موبايل: الأزرار تحت بعض */
+  @media (max-width: 768px) {
+    .action-buttons {
+      flex-direction: column;
+      gap: 6px;
+    }
+  }
+  

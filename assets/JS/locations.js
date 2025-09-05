@@ -308,3 +308,88 @@ function showNotification(message, type = 'info') {
         }
     }, 5000);
 }
+
+document.addEventListener('DOMContentLoaded', function ( ) {
+    AOS.init({ duration: 600, once: true });
+
+    // --- Dummy Data ---
+    let locationsData = [
+        { id: 1, name: 'الرياض - المكتب الرئيسي', employees: 50, manager: 'أحمد خالد' },
+        { id: 2, name: 'جدة - فرع المنطقة الغربية', employees: 35, manager: 'سارة عبد الله' },
+        { id: 3, name: 'مشروع نيوم', employees: 120, manager: 'علي الغامدي' },
+    ];
+
+    // --- عناصر الواجهة ---
+    const tableBody = document.getElementById('table-body');
+    const modal = document.getElementById('main-modal');
+    const modalForm = document.getElementById('modal-form');
+    const addNewBtn = document.getElementById('add-new-btn');
+    const closeModalBtn = document.getElementById('modal-close-btn');
+
+    // --- وظيفة عرض البيانات في الجدول ---
+    function renderTable() {
+        tableBody.innerHTML = '';
+        locationsData.forEach(loc => {
+            const row = `
+                <tr data-id="${loc.id}">
+                    <td>${loc.name}</td>
+                    <td>${loc.employees}</td>
+                    <td>${loc.manager}</td>
+                    <td><div class="controls-cell"><button class="control-btn edit-btn"><i class="fas fa-pen"></i></button><button class="control-btn delete-btn"><i class="fas fa-trash-alt"></i></button></div></td>
+                </tr>
+            `;
+            tableBody.insertAdjacentHTML('beforeend', row);
+        });
+    }
+
+    // --- وظائف المودال ---
+    const openModal = () => modal.classList.remove('hidden');
+    const closeModal = () => modal.classList.add('hidden');
+
+    addNewBtn.addEventListener('click', () => {
+        modalForm.reset();
+        document.getElementById('modal-title').textContent = 'إضافة موقع جديد';
+        document.getElementById('modal-submit-btn').textContent = 'إضافة';
+        modalForm.dataset.mode = 'add';
+        openModal();
+    });
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+    // --- منطق الجدول (تعديل وحذف) ---
+    tableBody.addEventListener('click', (e) => {
+        const editBtn = e.target.closest('.edit-btn');
+        const deleteBtn = e.target.closest('.delete-btn');
+
+        if (editBtn) {
+            // منطق التعديل
+        }
+
+        if (deleteBtn) {
+            Swal.fire({
+                title: 'هل أنت متأكد؟', text: "لا يمكن التراجع عن هذا الإجراء!", icon: 'warning',
+                showCancelButton: true, confirmButtonColor: '#dc3545', cancelButtonText: 'إلغاء', confirmButtonText: 'نعم، احذفه!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const row = deleteBtn.closest('tr');
+                    const id = parseInt(row.dataset.id, 10);
+                    locationsData = locationsData.filter(loc => loc.id !== id);
+                    renderTable();
+                    Swal.fire('تم الحذف!', 'تم حذف الموقع بنجاح.', 'success');
+                }
+            });
+        }
+    });
+
+    // --- منطق إرسال الفورم ---
+    modalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // (هنا يمكنك إضافة منطق الإضافة أو التعديل الفعلي للبيانات)
+        Swal.fire('تم!', 'تم حفظ البيانات بنجاح.', 'success');
+        closeModal();
+        renderTable(); // إعادة رسم الجدول بالبيانات الجديدة
+    });
+
+    // --- العرض الأولي للبيانات ---
+    renderTable();
+});

@@ -158,3 +158,68 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- Initial Render ---
     renderTable(workTimesData);
 });
+
+// ===================================
+document.addEventListener('DOMContentLoaded', function ( ) {
+    AOS.init({ duration: 600, once: true });
+
+    // --- عناصر الواجهة ---
+    const modal = document.getElementById('main-modal');
+    const modalForm = document.getElementById('modal-form');
+    const addNewBtn = document.getElementById('add-new-btn');
+    const closeModalBtn = document.getElementById('modal-close-btn');
+    const tableBody = document.getElementById('work-times-table-body');
+
+    // --- تفعيل flatpickr لاختيار الوقت ---
+    flatpickr(".time-picker", { enableTime: true, noCalendar: true, dateFormat: "h:i K" });
+
+    // --- وظيفة فتح وإغلاق المودال ---
+    const openModal = () => modal.classList.remove('hidden');
+    const closeModal = () => modal.classList.add('hidden');
+
+    addNewBtn.addEventListener('click', () => {
+        modalForm.reset();
+        document.getElementById('modal-title').textContent = 'إضافة وقت عمل جديد';
+        document.getElementById('modal-submit-btn').textContent = 'إضافة';
+        modalForm.dataset.mode = 'add';
+        openModal();
+    });
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+    // --- منطق الجدول (تعديل وحذف) ---
+    tableBody.addEventListener('click', (e) => {
+        const editBtn = e.target.closest('.edit-btn');
+        const deleteBtn = e.target.closest('.delete-btn');
+
+        if (editBtn) {
+            // منطق التعديل (يملأ الفورم ببيانات الصف الحالي)
+            document.getElementById('modal-title').textContent = 'تعديل وقت العمل';
+            document.getElementById('modal-submit-btn').textContent = 'حفظ التعديلات';
+            modalForm.dataset.mode = 'edit';
+            // (هنا يمكنك إضافة كود لجلب البيانات من الصف وتعبئة الفورم)
+            openModal();
+        }
+
+        if (deleteBtn) {
+            Swal.fire({
+                title: 'هل أنت متأكد؟', text: "لا يمكن التراجع عن هذا الإجراء!", icon: 'warning',
+                showCancelButton: true, confirmButtonColor: '#dc3545', cancelButtonText: 'إلغاء', confirmButtonText: 'نعم، احذفه!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    deleteBtn.closest('tr').remove();
+                    Swal.fire('تم الحذف!', 'تم حذف وقت العمل بنجاح.', 'success');
+                }
+            });
+        }
+    });
+
+    // --- منطق إرسال الفورم ---
+    modalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const mode = modalForm.dataset.mode;
+        const message = mode === 'add' ? 'تمت الإضافة بنجاح!' : 'تم التعديل بنجاح!';
+        Swal.fire('تم!', message, 'success');
+        closeModal();
+    });
+});

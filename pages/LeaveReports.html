@@ -3,789 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تقارير الإجازات</title>
-    <!-- ___ــــــــLogoـــــــ -->
-    <link rel="icon" href="../assets/images/HRlogo.jpg"/>
-    <!-- Bootstrap CSS -->
+    <title>تقارير الإجازات - HR Dashboard</title>
+    
+    <!-- /* ================= START Favicons, Fonts, Libraries ================= */ -->
+    <link rel="icon" href="../assets/images/LOGO.png"/>
     <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="../assets/CSS/all.min.css">
-    <!-- AOS Animation Library -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <!-- Google Fonts - Almarai -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
-    <!-- Custom-Css-->
-    <link rel="stylesheet" href="../assets/CSS/LeaveReports.css">
+    
+    <!-- /* ================= START Custom CSS ================= */ -->
     <link rel="stylesheet" href="../assets/CSS/style.css">
-
+    <link rel="stylesheet" href="../assets/CSS/LeaveReports.css">
 </head>
 <body>
-  <!-- ================= START  Navbar ================= -->
-  <header class="premium-header">
-    <nav class="premium-navbar">
-        <div class="navbar-container">
-            
-            <!-- Profile Section -->
-            <div class="profile-section">
-                <div class="profile-wrapper">
-                    <div class="profile-avatar">
-                        <img src="../assets/images/profile.jpg" alt="User Avatar" class="profile-img">
-                        <div class="status-indicator online"></div>
-                    </div>
-                    <div class="profile-info">
-                        <h6 class="profile-name">أحمد هارون</h6>
-                        <span class="profile-role">مدير عام</span>
-                    </div>
-                    <div class="profile-dropdown">
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                </div>
-                <div class="profile-menu">
-                    <div class="menu-item"><i class="fas fa-user"></i><span>الملف الشخصي</span></div>
-                    <div class="menu-item"><i class="fas fa-cog"></i><span>الإعدادات</span></div>
-                    <div class="menu-divider"></div>
-                    <div class="menu-item logout"><i class="fas fa-sign-out-alt"></i><span>تسجيل الخروج</span></div>
-                </div>                
-                    <!-- Phone Button -->
-                    <button class="action-btn phone-btn" title="الاتصال السريع">
-                      <i class="fas fa-phone"></i>
-                  </button>
-                  
-                  <!-- Notifications Button -->
-                  <button class="action-btn notification-btn" title="الإشعارات">
-                      <i class="fas fa-bell"></i>
-                      <span class="notification-badge">3</span>
-                  </button>
-                  
-                  <!-- Messages Button -->
-                  <button class="action-btn message-btn" title="الرسائل">
-                      <i class="fas fa-envelope"></i>
-                      <span class="message-badge">5</span>
-                  </button>
-            </div>
-            
-         
-            <!-- Search Section -->
-            <!-- Center - Enhanced Search -->
-            <div class="search-section">
-              <div class="search-container">
-                  <div class="search-input-wrapper">
-                      <i class="fas fa-search search-icon"></i>
-                      <input type="text" class="search-input" placeholder="ابحث في النظام..." autocomplete="off">
-                      <div class="search-suggestions">
-                          <div class="suggestion-item">
-                              <i class="fas fa-user"></i>
-                              <span>البحث عن موظف</span>
-                          </div>
-                          <div class="suggestion-item">
-                              <i class="fas fa-file-alt"></i>
-                              <span>البحث في التقارير</span>
-                          </div>
-                          <div class="suggestion-item">
-                              <i class="fas fa-calendar"></i>
-                              <span>البحث في الإجازات</span>
-                          </div>
-                      </div>
-                  </div>
-                  <button class="search-filter-btn" title="فلاتر البحث">
-                      <i class="fas fa-sliders-h"></i>
-                  </button>
-              </div>
-          </div>
-  
-            <!-- Actions & Breadcrumb Section -->
-            <div class="actions-section">
-                <div class="action-buttons">
-                            <!-- الرئيسية + الحضور والانصراف -->
-                  <div class="breadcrumb-section">
-                    <nav aria-label="breadcrumb">
-                        <ol class="premium-breadcrumb">
-                            <li class="breadcrumb-item active"><a href="../index.html" class="breadcrumb-link"><i class="fas fa-home"></i><span>الرئيسية</span></a></li>
-                            <li class="breadcrumb-item "><a href="../pages/Attendance.html" class="breadcrumb-link"><i class="fas fa-users"></i><span> الحضور والأنصراف</span></a></li>
-                        </ol>
-                    </nav>
-                </div>
-  
-                  <!-- Reports Dropdown -->
-                  <div class="reports-dropdown">
-                      <button class="action-btn reports-btn report" title="التقارير">التقارير 
-                          <i class="fas fa-chart-bar"></i>
-                          <i class="fas fa-chevron-down arrow-icon"></i>
-                      </button>
-                      <div class="reports-menu">
-                          <div class="report-item"><a href="../pages/report-daily.html"><i class="fas fa-calendar-day"></i><span>تقرير يومي</span></a></div>
-                          <div class="report-item"><a href="../pages/report-monthly.html"><i class="fas fa-calendar-alt"></i><span>تقرير شهري</span></a></div>
-                          <div class="report-item"><a href="../pages/report-daily.html"><i class="fas fa-chart-line"></i><span>تقرير سنوي</span></a></div>
-                      </div>
-                  </div>
-                    <!-- Quick Actions Dropdown -->
-                    <div class="quick-actions-dropdown">
-                      <button class="action-btn quick-btn" title="إجراءات سريعة">
-                          <i class="fas fa-plus"></i>
-                      </button>
-                      <div class="quick-menu">
-                          <div class="quick-item"><a href="../pages/AddEmployee.html"><i class="fas fa-user-plus"></i><span>إضافة موظف</span></a></div>
-                          <div class="quick-item"><a href="../pages/AddPerformanc.html"><i class="fas fa-calendar-plus"></i><span>طلب إجازة</span></a></div>
-                          <div class="quick-item"><a href="../pages/Report-Acc.html"><i class="fas fa-file-plus"></i><span>تقرير جديد</span></a></div>
-                      </div>
-                  </div>
-  
-                </div>
-  
-            </div>
-  
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle" aria-label="فتح القائمة">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
+   <!-- Backdrop for mobile sidebar -->
+   <div class="sidebar-backdrop"></div>
+   <div class="dashboard-container">
+ 
+     <!-- /* ================= START Mini Sidebar ================= */ -->
+     <aside class="mini-sidebar">
+       <a href="../index.html" class="mini-logo"><img src="../assets/images/HRlogo.png" alt="Logo" /></a>
+       <ul class="mini-nav">
+         <li><a href="#" title="بحث"><i class="fas fa-search"></i></a></li>
+         <li><a href="#" title="التقويم"><i class="fas fa-calendar-alt"></i></a></li>
+         <li><a href="#" title="جهات الاتصال"><i class="fas fa-address-book"></i></a></li>
+         <li><a href="#" title="الرسائل"><i class="fas fa-comment-dots"></i></a></li>
+         <li><a href="#" title="الملفات"><i class="fas fa-folder"></i></a></li>
+       </ul>
+       <div class="mini-sidebar-footer">
+         <div class="mini-sidebar-toggle"><button id="toggleMainSidebar" class="toggle-btn"><i class="fas fa-angle-double-left"></i></button></div>
+         <a href="#" title="الإعدادات"><i class="fas fa-cog p-3"></i></a>
+         <a href="#" title="ملف شخصي"><img src="../assets/images/profile.jpg" alt="User" class="mini-profile-img" /></a>
+       </div>
+     </aside>
+ 
+    <!-- /* ================= START Main Sidebar ================= */ -->
+    <aside class="main-sidebar">
+      <div class="sidebar-header">
+        <h2 class="logoName">HRZoon</h2>
+      </div>
+      <div class="sidebar-profile">
+        <h3>أحمد هارون</h3>
+        <h4>المدير العام</h4>
+      </div>
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="../index.html"><i class="fas fa-tachometer-alt"></i><span>الرئيسية</span></a>
+          </li>
+          <li class="nav-item has-submenu open active">
+            <a href="#"><i class="fas fa-user-check"></i><span> حضور و تنبيهات</span><i class="fas fa-chevron-left arrow"></i></a>
+            <ul class="submenu" style="max-height: 500px;">
+              <li class="active"><a href="./Attendance.html">الحضور والإنصراف</a></li>
+              <li><a href="./AlertAdd.html">تنبيهات وإنذارات</a></li>
+              <li><a href="./LeaveReports.html">تقارير الإجازات</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- /* ================= START Main Content ================= */ -->
+    <main class="main-content">
+      <header class="main-header">
+        <div class="header-left">
+            <button id="sidebarToggle" class="header-icon mobile-menu-btn" type="button" title="فتح القائمة"><i class="fas fa-bars"></i></button>
+            <div class="header-title">تقارير الإجازات</div>
         </div>
-    </nav>
-  </header>
-  <!-- ================= END  Navbar ================= -->
-  <section class="statistics-section mt-5 pt-5">
-    <div class="container-fluid px-4 py-4">
-        <div class="row g-3">
-  
-            <!-- Card 1: الإجمالي -->
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                <div class="stat-card">
-                    <div class="stat-content">
-                        <div class="stat-icon cyan-icon">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3 class="stat-number">100</h3>
-                            <p class="stat-label">الإجمالي</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-              <!-- Card 2: منتظمين -->
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                <div class="stat-card">
-                    <div class="stat-content">
-                        <div class="stat-icon purple-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3 class="stat-number">66</h3>
-                            <p class="stat-label">منتظمين</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 3: متأخرين -->
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                <div class="stat-card">
-                    <div class="stat-content">
-                        <div class="stat-icon blue-icon">
-                            <i class="fas fa-user-clock"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3 class="stat-number">9</h3>
-                            <p class="stat-label">متأخرين</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 4: م.التأخير -->
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                <div class="stat-card">
-                    <div class="stat-content">
-                        <div class="stat-icon green-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3 class="stat-number">90.4</h3>
-                            <p class="stat-label">م.التأخير</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 5: لم يحضروا -->
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                <div class="stat-card">
-                    <div class="stat-content">
-                        <div class="stat-icon red-icon">
-                            <i class="fas fa-user-times"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3 class="stat-number">16</h3>
-                            <p class="stat-label">لم يحضروا</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 6: في إجازة -->
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                <div class="stat-card">
-                    <div class="stat-content">
-                        <div class="stat-icon yellow-icon">
-                            <i class="fas fa-calendar-times"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3 class="stat-number">5</h3>
-                            <p class="stat-label">في إجازة</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-  
+        <div class="header-right">
+          <div class="header-search"><i class="fas fa-search"></i><input type="text" placeholder="بحث عن موظف..." /></div>
+          <button class="header-icon"><i class="fas fa-bell"></i><span class="icon-badge">3</span></button>
+          <button class="header-icon"><i class="fas fa-user-circle"></i></button>
         </div>
-    </div>
-  </section>
-  
-  <!-- ========== START NAVIGATION TABS SECTION ========== -->
-  <section class="navigation-section">
-    <div class="nav-tabs-container">
-    
-    <!-- Left Arrow Button -->
-    <button class="nav-arrow" id="navLeft" type="button" aria-label="السابق">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    
-    
-    <!-- Tabs Wrapper - All tabs in one container -->
-    <div class="nav-tabs-wrapper" id="tabsWrapper">
-      
-      <!-- Group 1: 4 tabs -->
-      <div class="nav-tab-item active" data-tab="home" data-group="1">
-        <a href="../index.html">
-          <div class="nav-tab-content">
-            <div class="tab-icon"><i class="fas fa-tachometer-alt"></i></div>
-            <span class="tab-text">الرئيسية</span>
-          </div>
-        </a>
-      </div>
-      <div class="nav-tab-item" data-tab="attendance" data-group="1">
-        <a href="../pages/Attendance.html" >
-          <div class="nav-tab-content">
-            <div class="tab-icon"><i class="fas fa-user-check"></i></div>
-            <span class="tab-text">الحضور والانصراف</span>
-          </div>
-        </a>
-      </div>
-      <div class="nav-tab-item" data-tab="alerts" data-group="1">
-        <a href="../pages/AlertAdd.html">
-          <div class="nav-tab-content">
-            <div class="tab-icon"><i class="fas fa-bell"></i></div>
-            <span class="tab-text">التنبيهات والإنذارات</span>
-          </div>
-        </a>
-      </div>
-      
-      <div class="nav-tab-item" data-tab="leave-reports" data-group="1">
-        <a href="../pages/LeaveReports.html">
-          <div class="nav-tab-content">
-            <div class="tab-icon"><i class="fas fa-calendar-alt"></i></div>
-            <span class="tab-text">تقارير الإجازات</span>
-          </div>
-        </a>
-      </div>
-    
-      <!-- Group 2: 4 tabs -->
-      <div class="nav-tab-item" data-tab="requests" data-group="2">
-        <a href="../pages/Requests.html">
-          <div class="nav-tab-content">
-            <div class="tab-icon"><i class="fas fa-inbox"></i></div>
-            <span class="tab-text">الطلبات</span>
-          </div>
-        </a>
-      </div>
-      
-      <div class="nav-tab-item" data-tab="recent-requests" data-group="2">
-        <a href="../pages/Requests.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-history"></i></div>
-          <span class="tab-text">الطلبات الحديثة</span>
+      </header>
+
+      <!-- ======== Toolbar & Filters (التحسين المضاف) ======== -->
+      <div class="table-toolbar" data-aos="fade-down">
+        <div class="search-bar">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="ابحث بالاسم أو الرقم الوظيفي...">
         </div>
-      </a>
-      </div>
-    
-      <div class="nav-tab-item" data-tab="all-requests" data-group="2">
-        <a href="../pages/Requests.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-archive"></i></div>
-          <span class="tab-text">جميع الطلبات</span>
-        </div>
-      </a>
-      </div>
-    
-      <div class="nav-tab-item" data-tab="approvals" data-group="2">
-        <a href="../pages/sequenceRequests.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-sitemap"></i></div>
-          <span class="tab-text">تسلسل الموافقات</span>
-        </div>
-      </a>
-      </div>
-    
-      <!-- Group 3: 2 tabs -->
-      <div class="nav-tab-item" data-tab="performance" data-group="3">
-        <a href="../pages/AddPerformanc.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-chart-line"></i></div>
-          <span class="tab-text">تقييم الأداء</span>
-        </div>
-      </a>
-      </div>
-    
-      <div class="nav-tab-item" data-tab="evaluation-requests" data-group="3">
-        <a href="../pages/Performanc-Order.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-tasks"></i></div>
-          <span class="tab-text">طلبات التقييم</span>
-        </div>
-      </a>
-      </div>
-    
-      <!-- Group 4: 5 tabs -->
-      <div class="nav-tab-item" data-tab="employees" data-group="4">
-        <a href="../pages/employee.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-users"></i></div>
-          <span class="tab-text">الموظفين</span>
-        </div>
-      </a>
-      </div>
-    
-      <div class="nav-tab-item" data-tab="employee-list" data-group="4">
-        <a href="../pages/employee.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-list-ul"></i></div>
-          <span class="tab-text">قائمة الموظفين</span>
-        </div>
-      </a>
-      </div>
-  
-      <div class="nav-tab-item" data-tab="new-employee" data-group="4">
-        <a href="../pages/AddEmployee.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-user-plus"></i></div>
-          <span class="tab-text">موظف جديد</span>
-        </div>
-      </a>
-      </div>
-      <div class="nav-tab-item" data-tab="import-excel" data-group="4">
-        <a href="../pages/ImportExcel.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-file-excel"></i></div>
-          <span class="tab-text">استيراد Excel</span>
-        </div>
-      </a>
-      </div>
-      <div class="nav-tab-item" data-tab="work-times" data-group="4">
-        <a href="../pages/WorkTimes.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-clock"></i></div>
-          <span class="tab-text">أوقات العمل</span>
-        </div>
-      </a>
-      </div>
-    
-      <!-- Group 5: 5 tabs -->
-      <div class="nav-tab-item" data-tab="control" data-group="5">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-sliders-h"></i></div>
-          <span class="tab-text">التحكم</span>
-        </div>
-      </div>
-  
-      <div class="nav-tab-item" data-tab="locations" data-group="5">
-        <a href="../pages/locations.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <span class="tab-text">المواقع والفروع</span>
-        </div>
-      </a>
-      </div>
-      <div class="nav-tab-item" data-tab="departments" data-group="5">
-        <a href="../pages/depar-Employe.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-building"></i></div>
-          <span class="tab-text">أقسام الموظفين</span>
-        </div>
-      </a>
-      </div>
-      <div class="nav-tab-item" data-tab="admin-accounts" data-group="5">
-        <a href="../pages/admin_accounts.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-user-shield"></i></div>
-          <span class="tab-text">الحسابات الإدارية</span>
-        </div>
-      </a>
-      </div>
-      <div class="nav-tab-item" data-tab="permissions" data-group="5">
-        <a href="../pages/perrmisonMang.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-key"></i></div>
-          <span class="tab-text">صلاحيات الإداريين</span>
-        </div>
-      </a>
-      </div>
-    
-      <!-- Group 6: 5 tabs -->
-      <div class="nav-tab-item" data-tab="finance" data-group="6">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-wallet"></i></div>
-          <span class="tab-text">المالية</span>
-        </div>
-      </div>
-      <div class="nav-tab-item" data-tab="payroll" data-group="6">
-        <a href="../pages/Payroll.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-money-bill-wave"></i></div>
-          <span class="tab-text">مسير الرواتب</span>
-        </div>
-        </a>
-      </div>
-      <div class="nav-tab-item" data-tab="invoices" data-group="6">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-          <span class="tab-text">الفواتير الضريبية</span>
-        </div>
-      </div>
-      <div class="nav-tab-item" data-tab="end-of-service" data-group="6">
-        <a href="../pages/end-of-service.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-handshake"></i></div>
-          <span class="tab-text">مكافأة نهاية الخدمة</span>
-        </div>
-      </a>
-      </div>
-      <div class="nav-tab-item" data-tab="financial-report" data-group="6">
-        <a href="../pages/Report-Acc.html">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-chart-pie"></i></div>
-          <span class="tab-text">التقرير المالي</span>
-        </div>
-      </a>
-      </div>
-    
-      <!-- Group 7: 3 tabs -->
-      <div class="nav-tab-item" data-tab="general-settings" data-group="7">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-cogs"></i></div>
-          <span class="tab-text">إعدادات عامة</span>
-        </div>
-      </div>
-      <div class="nav-tab-item" data-tab="subscriptions" data-group="7">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-id-card"></i></div>
-          <span class="tab-text">الاشتراكات</span>
-        </div>
-      </div>
-      <div class="nav-tab-item" data-tab="devices" data-group="7">
-        <div class="nav-tab-content">
-          <div class="tab-icon"><i class="fas fa-fingerprint"></i></div>
-          <span class="tab-text">الأجهزة</span>
-        </div>
-      </div>
-    
-    </div>
-    
-      <!-- Right Arrow Button -->
-      <button class="nav-arrow" id="navRight" type="button" aria-label="التالي">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-    </div>
-    </section>
-  <!-- ========== END NAVIGATION TABS SECTION ========== -->
-  
-  <!-- ========== START FILTERS SECTION ========== -->
-  <section class="filters-section">
-  <div class="container-fluid px-4">
-  <div class="filters-wrapper">
-  
-    <!-- ================= START Filters Row ================= -->
-    <div class="filters-row row g-3">
-  
-      <!-- Location Filter -->
-      <div class="col-lg-3 col-md-6">
-        <div class="filter-item">
-          <label class="filter-label">الموقع</label>
-          <div class="filter-select-wrapper">
-            <select class="filter-select">
-              <option value="egypt">مصر</option>
-              <option value="saudi">السعودية</option>
-              <option value="uae">الإمارات</option>
-              <option value="kuwait">الكويت</option>
-            </select>
-            <span class="filter-icon bg-red">
-              <i class="fas fa-map-marker-alt"></i>
-            </span>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Department Filter -->
-      <div class="col-lg-3 col-md-6">
-        <div class="filter-item">
-          <label class="filter-label">القسم</label>
-          <div class="filter-select-wrapper">
-            <select class="filter-select">
-              <option>قسم الموارد البشرية</option>
-              <option>قسم المالية</option>
-              <option>قسم التسويق</option>
-              <option>قسم تقنية المعلومات</option>
-            </select>
-            <span class="filter-icon bg-purple">
-              <i class="fas fa-building"></i>
-            </span>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Date Filter -->
-      <div class="col-lg-3 col-md-6">
-        <div class="filter-item">
-          <label class="filter-label">التاريخ</label>
-          <div class="filter-select-wrapper">
-            <input type="date" class="filter-select">
-            <span class="filter-icon bg-blue">
-              <i class="fas fa-calendar-alt"></i>
-            </span>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Additional Filter -->
-      <div class="col-lg-3 col-md-6">
-        <div class="filter-item">
-          <label class="filter-label">إضافي</label>
-          <div class="filter-select-wrapper">
-            <select class="filter-select">
-              <option>الكل</option>
-              <option>نشط</option>
-              <option>غير نشط</option>
-            </select>
-            <span class="filter-icon bg-green">
-              <i class="fas fa-filter"></i>
-            </span>
-          </div>
-        </div>
-      </div>
-  
-    </div>
-    <!-- ================= END Filters Row ================= -->
-  
-  </div>
-  </div>
-  </section>
-  <!-- ========== END FILTERS SECTION ========== -->
-  <div class="toolbar">
-        <!-- Right-side Actions -->
         <div class="action-buttons">
-          <div class="action-button">تصنيف
-              <i class="fa-solid fa-filter"></i>
-          </div>
-      </div>
-  
-      <!-- Central Search Bar -->
-      <div class="search-bar">
-          <input type="text" class="search-input" placeholder="ابحث هنا...">
-          <i class="fa-solid fa-magnifying-glass search-icon"></i>
-      </div>
-  
-          <!-- Left-side Actions -->
-          <div class="action-buttons">
-            <div class="action-button">تصدير
-                <i class="fa-solid fa-file-export"></i>
+            <div class="filter-dropdown">
+                <button class="action-button filter-btn"><i class="fas fa-filter"></i> تصنيف</button>
+                <div class="filter-menu">
+                    <a href="#" class="filter-item">الكل</a>
+                    <a href="#" class="filter-item">رصيد مرتفع</a>
+                    <a href="#" class="filter-item">رصيد منخفض</a>
+                    <a href="#" class="filter-item">حسب القسم</a>
+                </div>
             </div>
-            <div class="action-button">طباعة
-                <i class="fa-solid fa-print"></i>
-            </div>
+            <button class="action-button"><i class="fas fa-file-export"></i> تصدير</button>
+            <button class="action-button"><i class="fas fa-print"></i> طباعة</button>
         </div>
+      </div>
+
+      <!-- ======== Table Section ======== -->
+      <div class="table-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="table-responsive">
+          <table class="table custom-table align-middle text-center">
+            <thead class="table-light">
+              <tr>
+                <th>الرقم الوظيفي</th>
+                <th>الإسم</th>
+                <th>تاريخ بداية العمل</th>
+                <th>عدد الأيام المستحقة</th>
+                <th>الرصيد المتبقي</th>
+                <th>التحكم</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>175</td>
+                <td>ملاك مبارك السويداني</td>
+                <td>7/10/2024</td>
+                <td>25 يوم</td>
+                <td><span class="balance-tag low">1 يوم</span></td>
+                <td><a href="LeaveControl.html"><button class="btn-table-control circle-btn"><i class="fas fa-cogs"></i></button></a></td>          
+              </tr>
+              <tr>
+                <td>176</td>
+                <td>أحمد علي</td>
+                <td>15/11/2024</td>
+                <td>30 يوم</td>
+                <td><span class="balance-tag medium">15 يوم</span></td>
+                <td><a href="LeaveControl.html"><button class="btn-table-control circle-btn"><i class="fas fa-cogs"></i></button></a></td>  
+              </tr>
+              <tr>
+                <td>177</td>
+                <td>سارة إبراهيم</td>
+                <td>01/01/2023</td>
+                <td>30 يوم</td>
+                <td><span class="balance-tag high">28 يوم</span></td>
+                <td><a href="LeaveControl.html"><button class="btn-table-control circle-btn"><i class="fas fa-cogs"></i></button></a></td>  
+              </tr>
+              <tr>
+                <td>178</td>
+                <td>يوسف خالد</td>
+                <td>20/05/2022</td>
+                <td>21 يوم</td>
+                <td><span class="balance-tag low">3 أيام</span></td>
+                <td><a href="LeaveControl.html"><button class="btn-table-control circle-btn"><i class="fas fa-cogs"></i></button></a></td>  
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ======== Pagination ======== -->
+      <nav class="table-pagination mt-4" data-aos="fade-up" data-aos-delay="300">
+        <ul class="pagination justify-content-center m-0">
+          <li class="page-item disabled"><a class="page-link" href="#">&lt;</a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">&gt;</a></li>
+        </ul>
+      </nav>
+    </main>
   </div>
-    <!-- Table -->
-    <div class="table-responsive">
-      <table class="table custom-table align-middle text-center">
-        <thead class="table-light">
-          <tr>
-            <th>الرقم الوظيفي</th>
-            <th>الإسم</th>
-            <th>تاريخ بداية العمل</th>
-            <th>عدد الأيام المستحقة في السنة</th>
-            <th>الرصيد المتبقي</th>
-            <th>التحكم</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>175</td>
-            <td>ملاك مبارك محمد السويداني</td>
-            <td>7/10/2024</td>
-            <td>25 يوم</td>
-            <td><span class="balance-tag">1 يوم</span></td>
-            <td>
-              <a href="LeaveControl.html">
-              <button class="btn-table-control circle-btn">
-                <span class="custom-icon">
-                  <i class="fas fa-search"></i>
-                  <span class="lines"></span>
-                </span>
-              </button>
-            </a>
-            </td>          
-          </tr>
-          <tr>
-            <td>176</td>
-            <td>أحمد علي</td>
-            <td>15/11/2024</td>
-            <td>30 يوم</td>
-            <td><span class="balance-tag bg-success text-white">5 أيام</span></td>
-            <td>
-              <a href="LeaveControl.html">
-              <button class="btn-table-control circle-btn">
-                <span class="custom-icon">
-                  <i class="fas fa-search"></i>
-                  <span class="lines"></span>
-                </span>
-              </button>
-            </a>
-            </td>  
-          </tr>
 
-          <tr>
-            <td>175</td>
-            <td>ملاك مبارك محمد السويداني</td>
-            <td>7/10/2024</td>
-            <td>25 يوم</td>
-            <td><span class="balance-tag">1 يوم</span></td>
-            <td>
-              <a href="LeaveControl.html">
-              <button class="btn-table-control circle-btn">
-                <span class="custom-icon">
-                  <i class="fas fa-search"></i>
-                  <span class="lines"></span>
-                </span>
-              </button>
-            </a>
-            </td>  
-          </tr>
-
-          <tr>
-            <td>176</td>
-            <td>أحمد علي</td>
-            <td>15/11/2024</td>
-            <td>30 يوم</td>
-            <td><span class="balance-tag bg-success text-white">5 أيام</span></td>
-            <td>
-              <a href="LeaveControl.html">
-              <button class="btn-table-control circle-btn">
-                <span class="custom-icon">
-                  <i class="fas fa-search"></i>
-                  <span class="lines"></span>
-                </span>
-              </button>
-            </a>
-            </td>  
-          </tr>
-
-          <tr>
-            <td>175</td>
-            <td>ملاك مبارك محمد السويداني</td>
-            <td>7/10/2024</td>
-            <td>25 يوم</td>
-            <td><span class="balance-tag">1 يوم</span></td>
-            <td>
-              <a href="LeaveControl.html">
-              <button class="btn-table-control circle-btn">
-                <span class="custom-icon">
-                  <i class="fas fa-search"></i>
-                  <span class="lines"></span>
-                </span>
-              </button>
-            </a>
-            </td>  
-          </tr>
-
-          <tr>
-            <td>176</td>
-            <td>أحمد علي</td>
-            <td>15/11/2024</td>
-            <td>30 يوم</td>
-            <td><span class="balance-tag bg-success text-white">5 أيام</span></td>
-            <td>
-              <a href="LeaveControl.html">
-              <button class="btn-table-control circle-btn">
-                <span class="custom-icon">
-                  <i class="fas fa-search"></i>
-                  <span class="lines"></span>
-                </span>
-              </button>
-            </a>
-            </td>  
-          </tr>
-          
-          <tr>            
-            <td>175</td>
-            <td>ملاك مبارك محمد السويداني</td>
-            <td>7/10/2024</td>
-            <td>25 يوم</td>
-            <td><span class="balance-tag">1 يوم</span></td>
-            <td>
-              <a href="LeaveControl.html">
-              <button class="btn-table-control circle-btn">
-                <span class="custom-icon">
-                  <i class="fas fa-search"></i>
-                  <span class="lines"></span>
-                </span>
-              </button>
-            </a>
-            </td>  
-          </tr>
-          
-          <tr>
-            <td>176</td>
-            <td>أحمد علي</td>
-            <td>15/11/2024</td>
-            <td>30 يوم</td>
-            <td><span class="balance-tag bg-success text-white">5 أيام</span></td>
-            <td>
-              <a href="LeaveControl.html">
-              <button class="btn-table-control circle-btn">
-                <span class="custom-icon">
-                  <i class="fas fa-search"></i>
-                  <span class="lines"></span>
-                </span>
-              </button>
-            </a>
-            </td>  
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Pagination -->
-    <nav class="table-pagination mt-3">
-      <ul class="pagination justify-content-center m-0">
-        <li class="page-item"><a class="page-link" href="#">&lt;</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item active"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">4</a></li>
-        <li class="page-item"><a class="page-link" href="#">5</a></li>
-        <li class="page-item"><a class="page-link" href="#">&gt;</a></li>
-      </ul>
-    </nav>
-  </div>
-</main>
-
-    <!-- ========== END ========== -->
-
-    <!-- Bootstrap-->
-    <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>  
-    <!-- AOS Animation -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>AOS.init( );</script>
-    <!-- Custom JS -->
-    <script src="../assets/JS/script.js"></script>
-    <script src="../assets/JS/LeaveReports.js"></script>
+  <!-- /* ================= START Scripts ================= */ -->
+  <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../assets/JS/LeaveReports.js"></script>
+  <script src="../assets/JS/script.js"></script>
 
 
 </body>

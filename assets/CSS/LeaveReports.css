@@ -254,3 +254,90 @@
   background-color: rgba(0,0,0,0.2);
   border-radius: 3px;
 }
+
+        /* Styles for the new toolbar and filters */
+        .table-toolbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          background-color: #fff;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.05 );
+          margin-bottom: 20px;
+      }
+      .table-toolbar .search-bar {
+          position: relative;
+          flex-grow: 1;
+          max-width: 400px;
+      }
+      .table-toolbar .search-icon {
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          transform: translateY(-50%);
+          color: #aaa;
+      }
+      .table-toolbar .search-input {
+          width: 100%;
+          height: 45px;
+          border-radius: 8px;
+          border: 1px solid #e0e0e0;
+          background-color: #f8f9fa;
+          padding: 0 45px 0 20px;
+          font-size: 14px;
+      }
+      .table-toolbar .action-buttons {
+          display: flex;
+          gap: 10px;
+      }
+      .table-toolbar .action-button {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          background-color: #f8f9fa;
+          border: 1px solid #e0e0e0;
+          color: #333;
+          padding: 10px 20px;
+          border-radius: 8px;
+          font-weight: 700;
+          font-size: 14px;
+          transition: all 0.2s ease;
+      }
+      .table-toolbar .action-button:hover {
+          background-color: #e9ecef;
+          border-color: #ccc;
+      }
+      .filter-dropdown {
+          position: relative;
+      }
+      .filter-menu {
+          position: absolute;
+          top: 110%;
+          left: 0;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+          width: 180px;
+          z-index: 10;
+          overflow: hidden;
+          display: none; /* Initially hidden */
+          transition: all 0.3s ease;
+      }
+      .filter-menu.show {
+          display: block;
+      }
+      .filter-menu .filter-item {
+          display: block;
+          padding: 12px 15px;
+          color: #333;
+          text-decoration: none;
+      }
+      .filter-menu .filter-item:hover {
+          background-color: #f8f9fa;
+      }
+
+      /* Styles for balance tags */
+      .balance-tag.low { background-color: #fee2e2; color: #b91c1c; }
+      .balance-tag.medium { background-color: #fef3c7; color: #b45309; }
+      .balance-tag.high { background-color: #dcfce7; color: #15803d; }
